@@ -26,6 +26,11 @@
     overflow-y: auto;	
     top: $o-navbar-height;
     background-color: $mk-appbar-background;
+    &::-webkit-scrollbar {
+	  display: none;
+	}
+	-ms-overflow-style: none;
+	scrollbar-width: none;
     .mk_apps_sidebar {
 	    padding: 0;
 	    white-space: nowrap;
@@ -70,7 +75,7 @@
 		.mk_apps_sidebar_panel {
 			width: $mk-sidebar-large-width;
 		}
-		.o_main {
+		.o_action_manager {
 			padding-left: $mk-sidebar-large-width;
 		}
 	}
@@ -84,15 +89,29 @@
 				margin-right: 0 !important;
 			}
 		}
-		.o_main {
+		.o_action_manager {
 			padding-left: $mk-sidebar-small-width;
 		}
 	}
+
 	.mk_sidebar_type_invisible {
 		.mk_apps_sidebar_panel {
 			display: none;
 		}
 	}
+
+	//.sidebar_padding_invisible {
+	//	margin-left: $sidebar-invisible;
+	//}
+	//
+	//.sidebar_padding_small {
+	//	margin-left: $sidebar-small;
+	//}
+	//
+	//.sidebar_padding_large {
+	//	margin-left: $sidebar-large;
+	//}
+
 }
 
 @include media-breakpoint-only(md) {
@@ -106,31 +125,55 @@
 				margin-right: 0 !important;
 			}
 		}
-		.o_main {
+		.o_action_manager {
 			padding-left: $mk-sidebar-small-width;
 		}
 	}
+
 	.mk_sidebar_type_invisible {
 		.mk_apps_sidebar_panel {
 			display: none;
 		}
 	}
+	//.sidebar_padding_invisible {
+	//	margin-left: $sidebar-invisible;
+	//}
+	//
+	//.sidebar_padding_small {
+	//	margin-left: $sidebar-invisible;
+	//}
+	//
+	//.sidebar_padding_large {
+	//	margin-left: $sidebar-invisible;
+	//}
 }
 
 @include media-breakpoint-down(sm) {
 	.mk_apps_sidebar_panel {
 		display: none;
 	}
-	.o_main {
+	.o_action_manager {
 		padding-left: 0;
 	}
+
+	//.sidebar_padding_invisible {
+	//	margin-left: $sidebar-invisible;
+	//}
+	//
+	//.sidebar_padding_small {
+	//	margin-left: $sidebar-invisible;
+	//}
+	//
+	//.sidebar_padding_large {
+	//	margin-left: $sidebar-invisible;
+	//}
 }
 
 .o_fullscreen {
 	.mk_apps_sidebar_panel {
 		display: none;
 	}
-	.o_main {
+	.o_action_manager {
 		padding-left: 0;
 	}
 }

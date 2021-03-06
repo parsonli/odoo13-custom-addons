@@ -63,7 +63,7 @@ var MenuSearchMixin = {
         this._search_def.reject();
         this._search_def = $.Deferred();
         setTimeout(this._search_def.resolve.bind(this._search_def), 50);
-        this._search_def.done(this._searchMenus.bind(this));
+        this._search_def.then(this._searchMenus.bind(this));
     },
     _searchMenus: function () {
         var query = this.$search_input.val();

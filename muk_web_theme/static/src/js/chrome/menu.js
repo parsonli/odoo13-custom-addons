@@ -74,7 +74,7 @@ Menu.include({
     	var action_manager = this.getParent().action_manager;
     	var controller = action_manager.getCurrentController();
     	if (controller && !checkedCanBeRemoved) {
-    		controller.widget.canBeRemoved().done(function () {
+    		controller.widget.canBeRemoved().then(function () {
     			$(event.currentTarget).trigger('click', [true]);
     			$(event.currentTarget).off('.bs.dropdown');
             });

@@ -21,25 +21,30 @@
 **********************************************************************************/
 
 odoo.define('muk_web_theme.ActionManager', function (require) {
-"use strict";
+    "use strict";
 
-var core = require('web.core');
-var config = require("web.config");
+    var rpc = require('web.rpc');
+    var session = require('web.session');
+    var ActionManager = require('web.ActionManager');
 
-var ActionManager = require('web.ActionManager');
+    rpc.query({
+        model: 'res.users',
+        method: 'search_read',
+        args: [[['id', '=', session.uid]], ['chatter_position']]
+    }).then(function (pos) {
+        var position = pos[0]['chatter_position'];
+        var clsNames = 'o_action_manager mk_chatter_position_' + position;
+        ActionManager.include({
+            className: clsNames,
 
-var _t = core._t;
-var QWeb = core.qweb;
-
-ActionManager.include({
-	_handleAction: function (action) {
-        return this._super.apply(this, arguments).always($.proxy(this, '_hideMenusByAction', action));
-    },
-    _hideMenusByAction: function (action) {
-        var unique_selection = '[data-action-id=' + action.id + ']';
-        $(_.str.sprintf('.o_menu_apps .dropdown:has(.dropdown-menu.show:has(%s)) > a', unique_selection)).dropdown('toggle');
-        $(_.str.sprintf('.o_menu_sections.show:has(%s)', unique_selection)).collapse('hide');
-    },
-});
-
-});
+            _handleAction: function (action) {
+                return this._super.apply(this, arguments).then($.proxy(this, '_hideMenusByAction', action));
+            },
+            _hideMenusByAction: function (action) {
+                var unique_selection = '[data-action-id=' + action.id + ']';
+                $(_.str.sprintf('.o_menu_apps .dropdown:has(.dropdown-menu.show:has(%s)) > a', unique_selection)).dropdown('toggle');
+                $(_.str.sprintf('.o_menu_sections.show:has(%s)', unique_selection)).collapse('hide');
+            },
+        })
+    });
+})

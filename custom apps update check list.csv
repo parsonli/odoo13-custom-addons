@@ -12,7 +12,7 @@ muk_account_accountant,,1
 muk_account_bank_statement_import_sheet,,1
 muk_autovaccum,1,1
 muk_utils,1,1
-muk_web_theme,,1
+muk_web_theme,1,1
 muk_web_utils,1,1
 oin_sale_order_delivery_status,,1
 quality_assurance,,1

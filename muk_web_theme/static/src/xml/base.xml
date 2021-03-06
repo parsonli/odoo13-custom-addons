@@ -22,12 +22,14 @@
 
   -->
 
-<odoo>
-	
-	<template id="webclient_bootstrap" name="Web Client" inherit_id="web.webclient_bootstrap">
-        <xpath expr="//t[@t-set='body_classname']" position="after">
-            <t t-set="body_classname" t-value="'o_web_client mk_sidebar_type_' + request.env.user.sidebar_type or 'large'"/>
-        </xpath>
-    </template>
-	
-</odoo>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="web.DropdownMenu">
+		<t t-jquery="button" t-operation="inner">
+	        <span t-att-class="widget.dropdownIcon"/> 
+	        <span class="mk_dropdown_text"><t t-esc="widget.dropdownTitle"/></span>
+	        <span t-if="widget.dropdownSymbol" t-att-class="widget.dropdownSymbol"/>
+	    </t>
+    </t>
+    
+</templates>

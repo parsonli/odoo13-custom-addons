@@ -30,7 +30,7 @@ class IrHttp(models.AbstractModel):
 
     def session_info(self):
         result = super(IrHttp, self).session_info()
-        params = request.env['ir.config_parameter'].sudo()
+        params = request.env['ir.config_parameter'].with_user(self.env.ref('base.user_admin'))
         blend_mode = params.get_param('muk_web_theme.background_blend_mode')
         result.update(muk_web_theme_background_blend_mode=blend_mode or 'normal')
         return result
