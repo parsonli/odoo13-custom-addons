@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem name="质量" id="menu_quality_root" sequence="30"
+        groups="quality_assurance.group_quality_user"
+        web_icon="quality_assurance,static/description/icon.png"/>
+
+
+        <!-- ################# Quality Measures ################# -->
+
+        <record id="quality_measure_tree" model="ir.ui.view">
+            <field name="name">quality.measure.tree</field>
+            <field name="model">quality.measure</field>
+            <field name="arch" type="xml">
+                <tree string="检测产品及控制点" decoration-muted="not active">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <field name="type" widget="many2many_tags"/>
+                    <field name="trigger_time" widget="many2many_tags"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="quality_measure_form_view" model="ir.ui.view">
+            <field name="name">quality.measure.form</field>
+            <field name="model">quality.measure</field>
+            <field name="arch" type="xml">
+                <form string="检测产品及控制点">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object"
+                                    class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button"
+                                    options='{"terminology": "archive"}'/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <label for="name" string="项目名称"/>
+                            <h3><field name="name" placeholder="GA24含水率检测"/></h3>
+                        </div>
+                        <group>
+                            <field name="product_id"/>
+                        </group>
+                        <group>
+                            <field name="type">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="measure"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group>
+                            <field name="trigger_time">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="code"/>
+                                    <field name="default_location_dest_id"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="quality_measure_view_search" model="ir.ui.view">
+            <field name="name">quality.measure.search</field>
+            <field name="model">quality.measure</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <group expand="0" string="Group By">
+                        <filter string="产品变体" name="group_by_product_id" domain="[]" context="{'group_by':'product_id'}"/>
+                        <filter string="检测项目" name="group_by_type" domain="[]" context="{'group_by':'type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="quality_measure_action">
+            <field name="name">检测产品及控制点</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">quality.measure</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'active_test': False}</field>
+            <field name="search_view_id" ref="quality_measure_view_search"/>
+        </record>
+
+        <menuitem id="menu_quality_config_settings" name="设置" parent="menu_quality_root"
+            sequence="100" groups="group_quality_manager"/>
+
+        <menuitem id="menu_quality_measure" name="检测产品及控制点" parent="menu_quality_config_settings" action="quality_measure_action"/>
+
+    <!-- ################# Quality Type ################# -->
+
+
+        <record id="quality_type_tree" model="ir.ui.view">
+            <field name="name">quality.type.tree</field>
+            <field name="model">quality.type</field>
+            <field name="arch" type="xml">
+                <tree string="检测项目" decoration-muted="not active">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="measure"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="quality_type_form" model="ir.ui.view">
+            <field name="name">quality.type.form</field>
+            <field name="model">quality.type</field>
+            <field name="arch" type="xml">
+                <form string="检测项目">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                            </button>
+                        </div>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="measure"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+        <record id="quality_type_action" model="ir.actions.act_window">
+            <field name="name">检测项目</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">quality.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'active_test': False}</field>
+        </record>
+
+        <menuitem id="menu_quality_type" name="检测项目" parent="menu_quality_config_settings" action="quality_type_action"/>
+
+        <!-- ################# Quality Alerts ################# -->
+
+        <menuitem id="menu_quality_assurance" name="质检报告" parent="menu_quality_root"/>
+
+
+        <record id="quality_alert_tree" model="ir.ui.view">
+            <field name="name">quality.alert.tree</field>
+            <field name="model">quality.alert</field>
+            <field name="arch" type="xml">
+                <tree string="质检报告" decoration-info="state == 'wait'" decoration-danger="state == 'fail'">
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <field name="origin"/>
+                    <field name="date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="quality_alert_form" model="ir.ui.view">
+            <field name="name">quality.alert.form</field>
+            <field name="model">quality.alert</field>
+            <field name="arch" type="xml">
+                <form string="质检报告">
+                    <header>
+                        <button name="generate_tests" string="生成检测项目" type="object" class="oe_highlight" groups="quality_assurance.group_quality_user"/>
+                        <button name="btn_pass" string="通过" type="object" class="btn-success"
+                                attrs="{'invisible': [('state','==','pass')]}"
+                                groups="quality_assurance.group_quality_user"/>
+                        <button name="btn_fail" string="不合格" type="object" class="btn-danger"
+                                attrs="{'invisible': [('state','==','fail')]}"
+                                groups="quality_assurance.group_quality_user"/>
+                        <field name="state" widget="statusbar" statusbar_visible="wait,pass,fail" readonly="1"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h2><field name="name" placeholder="Name" readonly="1"/></h2>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="product_id"/>
+                                <field name="user_id"/>
+                            </group>
+                            <group>
+                                <field name="date"/>
+                                <!--<field name="origin"/>-->
+                                <field name="picking_id" readonly="1" attrs="{'invisible': [('picking_id', '==', False)]}"/>
+                                <field name="mrp_production_id" readonly="1" attrs="{'invisible': [('mrp_production_id', '==', False)]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="检测项目">
+                                <field name="tests"  nolabel="1">
+                                    <tree create="false" editable="1">
+                                        <field name="name"/>
+                                        <field name="test_type"/>
+                                        <field name="test_result"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="quality_alert_view_search" model="ir.ui.view">
+            <field name="name">quality.alert.search</field>
+            <field name="model">quality.alert</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="origin"/>
+                    <field name="product_id"/>
+                    <group expand="0" string="Group By">
+                        <filter string="源单据" name="groupby_origin" domain="[]" context="{'group_by':'origin'}"/>
+                        <filter string="产品" name="groupby_product_id" domain="[]" context="{'group_by':'product_id'}"/>
+                        <filter string="创建日期" name="groupby_createmonth" domain="[]" context="{'group_by':'date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="quality_alert_action">
+            <field name="name">检测报告</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">quality.alert</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="quality_alert_view_search"/>
+        </record>
+
+        <menuitem id="menu_quality_alert" name="检测报告" parent="menu_quality_assurance" action="quality_alert_action"/>
+<!-- ################# Quality Test ################# -->
+
+
+        <record id="quality_test_tree" model="ir.ui.view">
+            <field name="name">quality.test.tree</field>
+            <field name="model">quality.test</field>
+            <field name="arch" type="xml">
+                <tree string="检测报告明细">
+                    <field name="alert_id"/>
+                    <field name="quality_measure"/>
+                    <field name="product_id"/>
+                    <field name="name"/>
+                    <field name="test_type"/>
+                    <field name="test_result"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="quality_test_form" model="ir.ui.view">
+            <field name="name">quality.test.form</field>
+            <field name="model">quality.test</field>
+            <field name="arch" type="xml">
+                <form string="检测报告明细">
+                    <sheet>
+                        <group>
+                            <field name="alert_id"/>
+                            <field name="quality_measure"/>
+                            <field name="product_id"/>
+                        </group>
+                        <group>
+                            <field name="name"/>
+                            <field name="test_type"/>
+                            <field name="test_result"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+        <record id="quality_test_action" model="ir.actions.act_window">
+            <field name="name">检测报告明细</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">quality.test</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+    </data>
+</odoo>

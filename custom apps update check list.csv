@@ -1,0 +1,23 @@
+module name,check,on server
+abs_hide_sale_cost_price,,1
+account_dynamic_reports,,1
+cy_mrp_customize,,1
+cy_mrp_piecework,,1
+cy_odoo_customize,,1
+de_print_journal_entries,,1
+de_product_subcontracting,,1
+dynamic_xlsx,,1
+10n_cn_standard_lastest,,1
+muk_account_accountant,,1
+muk_account_bank_statement_import_sheet,,1
+muk_autovaccum,,1
+muk_utils,1,1
+muk_web_theme,,1
+muk_web_utils,,1
+oin_sale_order_delivery_status,,1
+quality_assurance,,1
+report_xlsx,,1
+salesperson_delivery,,1
+sr_product_based_pricelist,,1
+web_notify,,1
+enquiry_website_oin,,1
