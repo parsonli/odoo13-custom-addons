@@ -32,11 +32,11 @@ var registry = require('web.field_registry');
 var _t = core._t;
 var QWeb = core.qweb;
 
-fields.FieldBinaryFile.include({
+fields.FieldBinaryFile.extend({
 	willStart: function () {
 		var def = this._rpc({
             route: '/config/muk_web_utils.binary_max_size',
-        }).done(function(result) {
+        }).then(function(result) {
         	this.max_upload_size = result.max_upload_size * 1024 * 1024;
         }.bind(this));
 		return this._super.apply(this, arguments);

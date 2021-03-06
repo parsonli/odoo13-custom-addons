@@ -11,29 +11,6 @@
     max-height: inherit;
 }
 
-.simplebar-wrapper {
-    overflow: hidden;
-    width: inherit;
-    height: inherit;
-    max-width: inherit;
-    max-height: inherit;
-}
-
-.simplebar-mask {
-    direction: inherit;
-    position: absolute;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: auto !important;
-    height: auto !important;
-    z-index: 0;
-}
-
 .simplebar-offset {
     direction: inherit !important;
     box-sizing: inherit !important;

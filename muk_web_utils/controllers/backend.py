@@ -22,7 +22,7 @@
 
 import logging
 
-from odoo import http
+from odoo import http, SUPERUSER_ID
 from odoo.http import request
 
 _logger = logging.getLogger(__name__)
@@ -31,7 +31,7 @@ class BackendController(http.Controller):
     
     @http.route('/config/muk_web_utils.binary_max_size', type='json', auth="user")
     def max_upload_size(self, **kw):
-        params = request.env['ir.config_parameter'].sudo()
+        params = request.env['ir.config_parameter'].with_user(request.env['res.users'].browse(SUPERUSER_ID))
         return {
             'max_upload_size': int(params.get_param('muk_web_utils.binary_max_size', default=25))
         }

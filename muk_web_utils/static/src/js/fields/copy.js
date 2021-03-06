@@ -43,8 +43,8 @@ var BinaryFileCopy = fields.FieldBinaryFile.extend({
         this.accessToken = !!this.nodeOptions.token;
     },
     willStart: function() {
-    	var def = this.value && this.res_id ? this._fetchShareUrl() : $.when();
-    	return $.when(this._super.apply(this, arguments), def);
+    	var def = this.value && this.res_id ? this._fetchShareUrl() : Promise.resolve();
+    	return Promise.resolve(this._super.apply(this, arguments), def);
     },
     _fetchShareUrl: function() {
     	var self = this;

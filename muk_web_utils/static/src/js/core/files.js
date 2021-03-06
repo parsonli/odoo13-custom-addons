@@ -56,7 +56,7 @@ var traverseItems = function(items, tree) {
             }
     	}
     });
-    $.when.apply($, defs).then(function () {
+    Promise.resolve().apply($, defs).then(function () {
         def.resolve(files);
     });
     return def;
@@ -78,7 +78,7 @@ var traverseEntries = function(entries, tree) {
 		});
 		defs.push(traverse);
     });
-	$.when.apply($, defs).then(function () {
+	Promise.resolve().apply($, defs).then(function () {
         def.resolve(files);
     });
     return def;

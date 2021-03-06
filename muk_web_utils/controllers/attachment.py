@@ -24,7 +24,7 @@ import json
 import base64
 import logging
 
-from odoo import http
+from odoo import http, SUPERUSER_ID
 from odoo.http import request
 from odoo.tools.misc import str2bool
 
@@ -46,10 +46,10 @@ class AttachmentController(http.Controller):
         })
         attachment.generate_access_token()
         if ufile.mimetype and ufile.mimetype != 'application/octet-stream': 
-            attachment.sudo().write({
+            attachment.with_user(request.env['res.users'].browse(SUPERUSER_ID)).write({
                 'mimetype': ufile.mimetype,
             })
-        base_url = request.env['ir.config_parameter'].sudo().get_param('web.base.url')
+        base_url = request.env['ir.config_parameter'].with_user(request.env['res.users'].browse(SUPERUSER_ID)).get_param('web.base.url')
         result = attachment.read(['name', 'datas_fname', 'mimetype', 'checksum', 'access_token'])[0]
         result['url'] = '%s/web/content/%s?access_token=%s' % (base_url, attachment.id, attachment.access_token)
         return json.dumps(result)

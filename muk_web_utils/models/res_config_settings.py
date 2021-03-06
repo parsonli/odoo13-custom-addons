@@ -50,18 +50,17 @@ class ResConfigSettings(models.TransientModel):
     #----------------------------------------------------------
     # Functions
     #----------------------------------------------------------
-    
-    @api.multi 
+
     def set_values(self):
         res = super(ResConfigSettings, self).set_values()
-        param = self.env['ir.config_parameter'].sudo()
+        param = self.env['ir.config_parameter'].with_user(self.env.ref('base.user_admin'))
         param.set_param('muk_web_utils.binary_max_size', self.binary_max_size)
         return res
 
     @api.model
     def get_values(self):
         res = super(ResConfigSettings, self).get_values()
-        params = self.env['ir.config_parameter'].sudo()
+        params = self.env['ir.config_parameter'].with_user(self.env.ref('base.user_admin'))
         res.update(binary_max_size=int(params.get_param('muk_web_utils.binary_max_size', 25)))
         return res
     
@@ -69,7 +68,7 @@ class ResConfigSettings(models.TransientModel):
     def fields_view_get(self, view_id=None, view_type='form', toolbar=False, submenu=False):
         ret_val = super(ResConfigSettings, self).fields_view_get(
             view_id=view_id, view_type=view_type, toolbar=toolbar, submenu=submenu)
-        modules = self.env['ir.module.module'].sudo().search([]).mapped('name')
+        modules = self.env['ir.module.module'].with_user(self.env.ref('base.user_admin')).search([]).mapped('name')
         document = etree.XML(ret_val['arch'])
         for field in ret_val['fields']:
             if field.startswith("module_") and field[len("module_"):] not in modules:

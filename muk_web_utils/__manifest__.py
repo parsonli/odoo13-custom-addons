@@ -23,7 +23,7 @@
 { 
     "name": "MuK Web Utils",
     "summary": """Utility Features""",
-    "version": "12.0.3.0.4", 
+    "version": "13.0.1.0.1", 
     "category": "Extra Tools",
     "license": "LGPL-3",
     "author": "MuK IT",
@@ -31,6 +31,7 @@
     'live_test_url': 'https://mukit.at/r/SgN',
     "contributors": [
         "Mathias Markl <mathias.markl@mukit.at>",
+        "Benedikt Jilek <benedikt.jilek@mukit.at>",
     ],
     "depends": [
         "web_editor",

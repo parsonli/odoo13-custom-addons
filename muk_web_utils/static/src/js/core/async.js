@@ -37,7 +37,7 @@ var syncLoop = function(items, func, callback) {
 var syncProgress = function(items, func, callback, update) {
 	var progress = 0;
 	items.reduce(function(promise, item) {
-	    return promise.done(function() {
+	    return promise.then(function() {
 	    	update(++progress / items.length);
 	    	return func(item);
 	    });
@@ -72,7 +72,7 @@ var syncNotification = function(widget, title, items, func, callback) {
 	var notification = createNotification(widget, title);
 	var update = _.partial(updateNotification, widget, notification);
 	syncProgress(items, func, function() {
-		$.when(closeNotification(widget, notification)).then(callback);
+		Promise.resolve(closeNotification(widget, notification)).then(callback);
 	}, update);
 };
 
