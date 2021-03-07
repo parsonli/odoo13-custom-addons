@@ -91,8 +91,7 @@ class AccountBankStatementImportWizard(models.TransientModel):
             row.append(index)
             row.append(self.env.context.get('bank_statement_id'))
         return data, import_fields
-    
-    @api.multi
+
     def _parse_import_data(self, data, import_fields, options):
         parsed_data = super(AccountBankStatementImportWizard, self)._parse_import_data(data, import_fields, options)
         self._update_statement(parsed_data, import_fields, options)
@@ -107,8 +106,7 @@ class AccountBankStatementImportWizard(models.TransientModel):
         if balance_index:
             import_fields.remove('balance')
         return bank_data
-    
-    @api.multi
+
     def do(self, fields, columns, options, dryrun=False):
         self._cr.execute('SAVEPOINT import_bank_statement')
         bank_statement = self._prepare_statement()

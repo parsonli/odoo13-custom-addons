@@ -54,7 +54,6 @@ class AccountBankStatementImport(models.TransientModel):
         return filename and os.path.splitext(filename)[1] == '.ods' or \
             guess_mimetype(data_file) == MIMETYPE_ODS
 
-    @api.multi
     def import_file(self):
         if self._check_csv(self.data_file, self.filename):
             return self._import_wizard(self.filename, self.data_file, MIMETYPE_CSV)

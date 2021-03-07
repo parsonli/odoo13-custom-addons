@@ -19,7 +19,6 @@ class ResPartner(models.Model):
     ]
 
     # 替换系统自带的function，删除company_id，应收总计现在可以叠加多个公司的应收账款
-    @api.multi
     def _credit_debit_get(self):
         tables, where_clause, where_params = self.env['account.move.line'].with_context(state='posted')._query_get()
         where_params = [tuple(self.ids)] + where_params
@@ -31,29 +30,39 @@ class ResPartner(models.Model):
                       LEFT JOIN account_account_type act ON (a.user_type_id=act.id)
                       WHERE act.type IN ('receivable','payable')
                       AND account_move_line.partner_id IN %s
-                      AND account_move_line.reconciled IS FALSE
+                      AND account_move_line.reconciled IS NOT TRUE
                       """ + where_clause + """
                       GROUP BY account_move_line.partner_id, act.type
                       """, where_params)
+        treated = self.browse()
         for pid, type, val in self._cr.fetchall():
             partner = self.browse(pid)
             if type == 'receivable':
                 partner.credit = val
+                if partner not in treated:
+                    partner.debit = False
+                    treated |= partner
             elif type == 'payable':
                 partner.debit = -val
+                if partner not in treated:
+                    partner.credit = False
+                    treated |= partner
+        remaining = (self - treated)
+        remaining.debit = False
+        remaining.credit = False
 
     # 创建一个bool来控制，只允许sale manager来编辑credit limit。
-    @api.one
     def credit_limit_change(self):
-        self.able_credit_limit_change = self.env['res.users'].has_group('sales_team.group_sale_manager')
+        for rec in self:
+            rec.able_credit_limit_change = self.env['res.users'].has_group('sales_team.group_sale_manager')
 
     able_credit_limit_change = fields.Boolean(compute=credit_limit_change)
 
     # 把company的 credit 传递给不是company的个人上,为了计算服务(is over credit)
-    @api.one
     def credit_from_parent(self):
-        if not self.is_company:
-            self.parent_credit = self.parent_id.credit
+        for rec in self:
+            if not rec.is_company:
+                rec.parent_credit = rec.parent_id.credit
 
     parent_credit = fields.Monetary(compute=credit_from_parent, readonly='True')
 
@@ -75,8 +84,7 @@ class SaleOrder(models.Model):
     # bool用来控制是否显示确认按钮
     over_credit = fields.Boolean(compute=is_over_credit, readonly='True')
 
-    @api.multi
-    def action_invoice_create(self, grouped=False, final=False):
+    def action_invoice_create(self):
         for order in self:
             if order.env.user.company_id.id != order.company_id.id:
                 raise UserError(_("请切换公司后再创建发票"))

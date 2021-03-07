@@ -14,7 +14,6 @@ class StockMove(models.Model):
 
     price_total = fields.Float('小计', compute="_compute_price_total", store=True)
 
-    @api.multi
     def _get_price_unit(self):
         self.ensure_one()
         if self.production_id:

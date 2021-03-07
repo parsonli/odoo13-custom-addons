@@ -86,7 +86,6 @@ class InsPartnerAgeing(models.TransientModel):
         default=_get_default_company
     )
 
-    @api.multi
     def write(self, vals):
         if not vals.get('partner_ids'):
             vals.update({

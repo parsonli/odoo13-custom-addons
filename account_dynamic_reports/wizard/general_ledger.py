@@ -193,7 +193,6 @@ class InsGeneralLedger(models.TransientModel):
         ret = super(InsGeneralLedger, self).create(vals)
         return ret
 
-    @api.multi
     def write(self, vals):
 
         if vals.get('date_range'):

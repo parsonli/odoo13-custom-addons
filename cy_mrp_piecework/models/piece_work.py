@@ -40,13 +40,13 @@ class PieceWork(models.Model):
                 'amount_overwork_credit': amount_overwork_credit,
             })
 
-    @api.one
     def _set_produced_date(self):
-        self.work_line.write({'produced_date': self.produced_date})
+        for rec in self.work_line:
+            rec.write({'produced_date': self.produced_date})
 
-    @api.one
     def _set_worker_id(self):
-        self.work_line.write({'worker_id': self.worker_id.id})
+        for rec in self.work_line:
+            rec.work_line.write({'worker_id': self.worker_id.id})
 
 
 class PieceWorkLine(models.Model):
@@ -135,7 +135,6 @@ class PieceWorkLine(models.Model):
                 'piece_credit_subtotal': subtotal,
             })
 
-    @api.multi
     @api.depends('over_work')
     def compute_over_work_char(self):
         for rec in self:
@@ -144,7 +143,6 @@ class PieceWorkLine(models.Model):
             else:
                 rec.over_work_char = '白班分'
 
-    @api.multi
     @api.onchange('production_id')
     def production_id_change(self):
         vals = {}
@@ -159,7 +157,6 @@ class PieceWorkLine(models.Model):
         return result
 
 
-    @api.multi
     @api.onchange('product_id')
     def product_id_change(self):
         if not self.product_id:
@@ -191,7 +188,6 @@ class PieceWorkLine(models.Model):
         result = {'domain': domain}
         return result
 
-    @api.multi
     @api.onchange('product_uom')
     def product_uom_change(self):
         vals = {}

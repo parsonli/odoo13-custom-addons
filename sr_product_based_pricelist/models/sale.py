@@ -24,7 +24,6 @@ from odoo import api, models
 class product_product(models.Model):
     _inherit = "product.product"
 
-    @api.multi
     def name_get(self):
         if self._context.get('temp'):
             return super(product_product, self).name_get()
@@ -47,7 +46,6 @@ class product_product(models.Model):
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
-    @api.multi
     @api.onchange('product_id')
     def product_id_change(self):
         if not self.product_id:

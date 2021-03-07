@@ -5,7 +5,6 @@ from odoo import api, models
 class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
-    @api.multi
     def _create_picking(self):
         StockPicking = self.env['stock.picking']
         for order in self:

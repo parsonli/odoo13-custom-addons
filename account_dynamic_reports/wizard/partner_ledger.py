@@ -193,7 +193,6 @@ class InsPartnerLedger(models.TransientModel):
         ret = super(InsPartnerLedger, self).create(vals)
         return ret
 
-    @api.multi
     def write(self, vals):
 
         if vals.get('date_range'):

@@ -17,7 +17,6 @@ class MrpProduction(models.Model):
             production.alert_ids = alerts
             production.alert_count = len(alerts)
 
-    @api.multi
     def quality_alert_action(self):
         '''This function returns an action that display existing quality alerts generated from a given picking.'''
         action = self.env.ref('quality_assurance.quality_alert_action')
@@ -39,7 +38,6 @@ class MrpProduction(models.Model):
     alert_count = fields.Integer(compute='_compute_alert', string='质检报告', default=0)
     alert_ids = fields.Many2many('quality.alert', compute='_compute_alert', string='质检报告', copy=False)
 
-    @api.multi
     def generate_quality_alert(self):
         '''
         This function generates quality alerts for the products mentioned in move_lines of given picking and also have quality measures configured.
@@ -57,7 +55,6 @@ class MrpProduction(models.Model):
                     'company_id': self.company_id.id,
                 })
 
-    @api.multi
     def open_produce_product(self):
         res = super(MrpProduction, self).open_produce_product()
         if self.alert_count == 0:

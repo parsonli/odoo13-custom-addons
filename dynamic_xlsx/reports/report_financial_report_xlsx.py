@@ -206,7 +206,6 @@ class InsFinancialReportXlsx(models.AbstractModel):
                     self.sheet.write_number(self.row_pos, 2, float(a.get('balance')), tmp_style_num)
                 else:
                     self.sheet.write_number(self.row_pos, 1, float(a.get('balance')), tmp_style_num)
-
         if data.get('initial_balance') or data.get('current_balance') or data.get('ending_balance'):
             self.row_pos += 2
             self.sheet.merge_range(self.row_pos, 1, self.row_pos, 2, 'Initial Cash Balance',

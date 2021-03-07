@@ -16,7 +16,6 @@ class PurchaseOrder(models.Model):
         for order in self:
             order.delivery_count = len(order.subcontract_id.picking_ids) - len(order.picking_ids)
 
-    @api.multi
     def action_view_delivery(self):
         '''
         This function returns an action that display existing delivery orders
@@ -119,7 +118,6 @@ class PurchaseSubcontracting(models.Model):
     check_price_unit = fields.Boolean(compute='_check_price_unit')
     product_current_price_unit = fields.Float(string='当前订单单价', digits=dp.get_precision('Product Price'), compute='_get_product_current_price_unit', store=True)
 
-    @api.multi
     def unlink(self):
         for order in self:
             if not order.state == 'cancel':
@@ -142,7 +140,6 @@ class PurchaseSubcontracting(models.Model):
         for order in self:
             order.delivery_count = len(order.picking_ids)
 
-    @api.multi
     def action_confirm(self):
         for order in self:
             order.write({'state': 'subcontract'})
@@ -249,20 +246,16 @@ class PurchaseSubcontracting(models.Model):
             self.env['stock.move'].create(stock_move_vals)
         self.env.user.notify_info('成功创建1张采购单，2张调拨单', title='信息', sticky=False)
 
-    @api.multi
     def action_draft(self):
         self.write({'state': 'draft'})
         return {}
 
-    @api.multi
     def action_done(self):
         return self.write({'state': 'done'})
 
-    @api.multi
     def action_unlock(self):
         self.write({'state': 'subcontract'})
 
-    @api.multi
     def action_cancel(self):
         for order in self:
             for pick in order.picking_ids:
@@ -277,7 +270,6 @@ class PurchaseSubcontracting(models.Model):
                     purchase_order.button_cancel()
         return self.write({'state': 'cancel'})
 
-    @api.multi
     def action_view_delivery(self):
         '''
         This function returns an action that display existing delivery orders
@@ -294,7 +286,6 @@ class PurchaseSubcontracting(models.Model):
             action['res_id'] = pickings.id
         return action
 
-    @api.multi
     def action_view_purchase(self):
         action = self.env.ref('purchase.purchase_rfq').read()[0]
 
@@ -306,7 +297,6 @@ class PurchaseSubcontracting(models.Model):
             action['res_id'] = purchases.id
         return action
 
-    @api.multi
     def generate_bom(self):
         if not self.product_id.bom_ids:
             raise UserError(_('未能找到产品的物料清单，请先确认以为产品配置物料清单后，再点击 生成外发原材料'))

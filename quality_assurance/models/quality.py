@@ -63,15 +63,12 @@ class QualityAlert(models.Model):
         result = super(QualityAlert, self).create(vals)
         return result
 
-    @api.multi
     def btn_pass(self):
         self.state = 'pass'
 
-    @api.multi
     def btn_fail(self):
         self.state = 'fail'
 
-    @api.multi
     def generate_tests(self):
         quality_measure = self.env['quality.measure']
         measures = quality_measure.search([('product_id', '=', self.product_id.id),

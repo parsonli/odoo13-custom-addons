@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 {
     'name' : 'Xlsx support on Dynamic Financial Reports v13',
-    'version' : '12.0.2',
-    'summary': 'Xlsx Support module for dynamic reports for odoo v12.',
+    'version' : '13.0.2',
+    'summary': 'Xlsx Support module for dynamic reports for odoo v13.',
     'sequence': 15,
     'description': """
-                    Xlsx Support module for dynamic reports for odoo v12.
+                    Xlsx Support module for dynamic reports for odoo v13.
                     It is a supporting module for account_dynamic_reports.
                     """,
     'category': 'Accounting/Accounting',

@@ -471,7 +471,6 @@ class InsFinancialReport(models.TransientModel):
         ret = super(InsFinancialReport, self).create(vals)
         return ret
 
-    @api.multi
     def write(self, vals):
         if vals.get('date_range'):
             vals.update({'date_from': False, 'date_to': False})
