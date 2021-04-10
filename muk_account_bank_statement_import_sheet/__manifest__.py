@@ -23,7 +23,7 @@
 {
     "name": "MuK Bank Statement Import",
     "summary": """CSV/XLS/XLSX/ODS Import Wizard""",
-    "version": "12.0.3.0.0",
+    "version": "13.0.0.0.0",
     "category": "Accounting",
     "license": "LGPL-3",
     "website": "http://www.mukit.at",

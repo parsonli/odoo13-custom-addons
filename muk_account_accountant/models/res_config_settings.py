@@ -60,5 +60,5 @@ class ResConfigSettings(models.TransientModel):
     @api.onchange('fiscalyear_last_month')
     def _onchange_fiscalyear_last_month(self):
         year = datetime.datetime.now().year
-        month = self.fiscalyear_last_month
+        month = int(self.fiscalyear_last_month)
         self.fiscalyear_last_day = calendar.monthrange(year, month)[1]

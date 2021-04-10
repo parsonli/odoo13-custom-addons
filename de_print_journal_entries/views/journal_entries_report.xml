@@ -30,7 +30,7 @@
         <t t-foreach="docs" t-as="o">
           <t t-set="total_debit" t-value="0"/>
           <t t-set="total_credit" t-value="0"/>
-           <t t-call="web.basic_layout">
+           <t t-call="web.internal_layout">
                 <div class="page">
                     <h3 class="text-center">
                         <strong>会计凭证</strong>

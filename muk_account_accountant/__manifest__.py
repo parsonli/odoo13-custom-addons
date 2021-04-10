@@ -23,7 +23,7 @@
 {
     'name': 'MuK Accounting and Finance',
     'summary': 'Financial and Analytic Accounting',
-    'version': '12.0.2.0.0',   
+    'version': '13.0.0.0.0',
     'category': 'Accounting',
     'license': 'LGPL-3',
     'author': 'MuK IT',

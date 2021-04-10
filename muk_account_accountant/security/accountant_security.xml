@@ -26,7 +26,7 @@
 
 	<record id="account.group_account_user" model="res.groups">
 	    <field name="name">Accountant</field>
-	    <field name="category_id" ref="base.module_category_accounting_and_finance"/>
+	    <field name="category_id" ref="base.module_category_accounting_accounting"/>
 	    <field name="implied_ids" eval="[(4, ref('account.group_account_invoice'))]"/>
 	</record>
 	

@@ -7,9 +7,9 @@
             <field name="model">mrp.production</field>
             <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='quantity_done']" position="after">
-                    <field name="price_total" string="小计" groups="abs_hide_sale_cost_price.group_cost_price_show"/>
-                </xpath>
+<!--                <xpath expr="//field[@name='quantity_done']" position="after">-->
+<!--                    <field name="price_total" string="小计" groups="abs_hide_sale_cost_price.group_cost_price_show"/>-->
+<!--                </xpath>-->
                 <xpath expr="//notebook" position="after">
                     <separator string="1.不可以解锁修改产成品数量"/>
                     <separator string="2.在记录生产页面，增加/减少 消耗的物料"/>
