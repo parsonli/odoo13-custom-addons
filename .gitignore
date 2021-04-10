@@ -9,6 +9,7 @@ _build/
 !.coveragerc
 # compiled python files
 *.py[co]
+*.pyc
 __pycache__/
 # setup.py egg_info
 *.egg-info
@@ -42,4 +43,4 @@ setup/win32/static/postgresql*.exe
 /man/
 /share/
 /src/
-*.pyc
+
