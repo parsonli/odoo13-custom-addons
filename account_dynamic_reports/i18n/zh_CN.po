@@ -4,45 +4,42 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0-20191025\n"
+"Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-13 11:30+0000\n"
-"PO-Revision-Date: 2020-08-14 00:13+0800\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2021-04-11 10:29+0000\n"
+"PO-Revision-Date: 2021-04-11 20:09+0800\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"Language: zh_CN\n"
+"Language: zh\n"
 "X-Generator: Poedit 2.4.1\n"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:194
+#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:0
 #, python-format
 msgid " To "
 msgstr " 至 "
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/wizard/partner_ageing.py:107
+#: code:addons/account_dynamic_reports/wizard/partner_ageing.py:0
 #, python-format
 msgid "\"Bucket order must be ascending\""
-msgstr ""
+msgstr "“设置时间跨度时，数值必须是递增的”"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/wizard/general_ledger.py:237
-#: code:addons/account_dynamic_reports/wizard/partner_ledger.py:229
-#: code:addons/account_dynamic_reports/wizard/trial_balance.py:209
+#: code:addons/account_dynamic_reports/wizard/general_ledger.py:0
+#: code:addons/account_dynamic_reports/wizard/partner_ledger.py:0
+#: code:addons/account_dynamic_reports/wizard/trial_balance.py:0
 #, python-format
 msgid "\"Date from\" must be less than or equal to \"Date to\""
-msgstr ""
+msgstr "“开始日期” 必须小于或等于 “结束日期”"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:48
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:49
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1120
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1121
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "&nbsp;"
 msgstr ""
@@ -56,29 +53,29 @@ msgid "*** END OF DOCUMENT ***"
 msgstr "*** 文档结束 ***"
 
 #. module: account_dynamic_reports
-#: selection:ins.financial.report,financial_year:0
-#: selection:ins.general.ledger,financial_year:0
-#: selection:ins.partner.ledger,financial_year:0
-#: selection:ins.trial.balance,financial_year:0
-#: selection:res.company,financial_year:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__financial_year__april_march
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__financial_year__april_march
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__financial_year__april_march
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_trial_balance__financial_year__april_march
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__res_company__financial_year__april_march
 msgid "1 April to 31 March"
 msgstr "4月1日至3月31日"
 
 #. module: account_dynamic_reports
-#: selection:ins.financial.report,financial_year:0
-#: selection:ins.general.ledger,financial_year:0
-#: selection:ins.partner.ledger,financial_year:0
-#: selection:ins.trial.balance,financial_year:0
-#: selection:res.company,financial_year:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__financial_year__january_december
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__financial_year__january_december
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__financial_year__january_december
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_trial_balance__financial_year__january_december
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__res_company__financial_year__january_december
 msgid "1 Jan to 31 Dec"
 msgstr "1月1日至12月31日"
 
 #. module: account_dynamic_reports
-#: selection:ins.financial.report,financial_year:0
-#: selection:ins.general.ledger,financial_year:0
-#: selection:ins.partner.ledger,financial_year:0
-#: selection:ins.trial.balance,financial_year:0
-#: selection:res.company,financial_year:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__financial_year__july_june
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__financial_year__july_june
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__financial_year__july_june
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_trial_balance__financial_year__july_june
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__res_company__financial_year__july_june
 msgid "1 july to 30 June"
 msgstr "7月1日至6月30日"
 
@@ -147,7 +144,7 @@ msgstr "<strong>分析:</strong>"
 #. module: account_dynamic_reports
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ageing
 msgid "<strong>As on Date:</strong>"
-msgstr "<strong>As on Date:</strong>"
+msgstr "<strong>截止于:</strong>"
 
 #. module: account_dynamic_reports
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.ins_report_financial
@@ -214,14 +211,10 @@ msgstr "<strong>已过账分录/所有分录 :</strong>"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:233
-#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:159
-#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:203
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:302
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:504
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:559
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:744
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1032
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model:ir.model,name:account_dynamic_reports.model_account_account
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
 #, python-format
@@ -243,7 +236,7 @@ msgid "Account Reports"
 msgstr "会计报表"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:186
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_general_ledger__account_tag_ids
 #, python-format
 msgid "Account Tags"
@@ -251,21 +244,20 @@ msgstr "科目标签"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:433
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Account Tags:"
 msgstr "科目标签："
 
 #. module: account_dynamic_reports
-#: selection:ins.account.financial.report,type:0
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_partner_ledger__type
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_account_financial_report__type__account_type
 msgid "Account Type"
 msgstr "科目类型"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:667
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:923
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Account Type:"
 msgstr "科目类型："
@@ -281,21 +273,20 @@ msgid "Accounting Reports"
 msgstr "会计报表"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:178
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:171
-#: selection:ins.account.financial.report,type:0
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:0
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_account_financial_report__account_ids
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_general_ledger__account_ids
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_partner_ledger__account_ids
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_trial_balance__account_ids
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_account_financial_report__type__accounts
 #, python-format
 msgid "Accounts"
 msgstr "科目"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:422
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:956
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Accounts:"
 msgstr "科目："
@@ -306,34 +297,34 @@ msgid "Ageing Bucket"
 msgstr "账龄跨度"
 
 #. module: account_dynamic_reports
-#: selection:ins.general.ledger,display_accounts:0
-#: selection:ins.partner.ledger,display_accounts:0
-#: selection:ins.trial.balance,display_accounts:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__display_accounts__all
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__display_accounts__all
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_trial_balance__display_accounts__all
 msgid "All"
-msgstr "所有"
+msgstr "所有科目"
 
 #. module: account_dynamic_reports
-#: selection:ins.financial.report,target_move:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__target_move__all
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.ins_report_financial
 msgid "All Entries"
 msgstr "所有分录"
 
 #. module: account_dynamic_reports
-#: selection:ins.financial.report,target_move:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__target_move__posted
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.ins_report_financial
 msgid "All Posted Entries"
 msgstr "已过账分录"
 
 #. module: account_dynamic_reports
-#: selection:ins.general.ledger,target_moves:0
-#: selection:ins.partner.ledger,target_moves:0
-#: selection:ins.trial.balance,target_moves:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__target_moves__all_entries
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__target_moves__all_entries
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_trial_balance__target_moves__all_entries
 msgid "All entries"
 msgstr "所有分录"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:194
-#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:165
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:0
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_financial_report__analytic_ids
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_general_ledger__analytic_ids
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_trial_balance__analytic_ids
@@ -342,7 +333,7 @@ msgid "Analytic Accounts"
 msgstr "分析标签"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:202
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_financial_report__analytic_tag_ids
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_general_ledger__analytic_tag_ids
 #, python-format
@@ -351,41 +342,34 @@ msgstr "分析标签"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:173
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:455
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Analytic Tags:"
 msgstr "分析标签："
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:162
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:444
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1320
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Analytic:"
 msgstr "分析："
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:102
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:364
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:634
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:878
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1262
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Apply"
 msgstr "应用"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:130
+#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:0
 #, python-format
 msgid "As on Date"
 msgstr "日期"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:642
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "As on Date :"
 msgstr "日期："
@@ -396,35 +380,17 @@ msgid "As on date"
 msgstr "日期"
 
 #. module: account_dynamic_reports
-#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_assets0
-msgid "Assets"
-msgstr "资产"
-
-#. module: account_dynamic_reports
-#: selection:ins.account.financial.report,style_overwrite:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_account_financial_report__style_overwrite__0
 msgid "Automatic formatting"
 msgstr "自动套用格式"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:156
-#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:186
-#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:189
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:229
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:238
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:198
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:206
-#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:209
-#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:215
-#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:221
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:20
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:235
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:305
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:749
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:819
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1035
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1038
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1041
+#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.ins_report_financial
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
@@ -434,7 +400,6 @@ msgid "Balance"
 msgstr "余额"
 
 #. module: account_dynamic_reports
-#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_balancesheet0
 #: model:ir.actions.act_window,name:account_dynamic_reports.action_ins_balance_sheet_report
 #: model:ir.actions.client,name:account_dynamic_reports.action_dynamic_allinone_bs_report
 #: model:ir.ui.menu,name:account_dynamic_reports.account_report_bl
@@ -444,76 +409,75 @@ msgstr "资产负债表"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:236
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:750
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Balance in FC"
-msgstr ""
+msgstr "外币余额"
 
 #. module: account_dynamic_reports
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_partner_ageing__bucket_1
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_res_company__bucket_1
 msgid "Bucket 1"
-msgstr "跨度1"
+msgstr "账龄时段1"
 
 #. module: account_dynamic_reports
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_partner_ageing__bucket_2
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_res_company__bucket_2
 msgid "Bucket 2"
-msgstr "跨度2"
+msgstr "账龄时段2"
 
 #. module: account_dynamic_reports
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_partner_ageing__bucket_3
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_res_company__bucket_3
 msgid "Bucket 3"
-msgstr "跨度3"
+msgstr "账龄时段3"
 
 #. module: account_dynamic_reports
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_partner_ageing__bucket_4
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_res_company__bucket_4
 msgid "Bucket 4"
-msgstr "跨度4"
+msgstr "账龄时段4"
 
 #. module: account_dynamic_reports
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_partner_ageing__bucket_5
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_res_company__bucket_5
 msgid "Bucket 5"
-msgstr "跨度5"
+msgstr "账龄时段5"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:653
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Bucket-1"
-msgstr "跨度-1"
+msgstr "账龄时段-1"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:655
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Bucket-2"
-msgstr "跨度-2"
+msgstr "账龄时段-2"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:657
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Bucket-3"
-msgstr "跨度-3"
+msgstr "账龄时段-3"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:659
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Bucket-4"
-msgstr "跨度-4"
+msgstr "账龄时段-4"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:661
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Bucket-5"
-msgstr "跨度-5"
+msgstr "账龄时段-5"
 
 #. module: account_dynamic_reports
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.ins_general_ledger_wizard
@@ -536,31 +500,12 @@ msgid "Cash Flow Report"
 msgstr "现金流量表"
 
 #. module: account_dynamic_reports
-#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_cash_flow0
-msgid "Cash Flow Statement"
-msgstr "现金流量表"
-
-#. module: account_dynamic_reports
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_account_account__cash_flow_category
 msgid "Cash Flow type"
 msgstr "现金流量类型"
 
 #. module: account_dynamic_reports
-#: model:ins.account.financial.report,name:account_dynamic_reports.ins_cash_in_financial_1
-#: model:ins.account.financial.report,name:account_dynamic_reports.ins_cash_in_investing_1
-#: model:ins.account.financial.report,name:account_dynamic_reports.ins_cash_in_operation_1
-msgid "Cash In"
-msgstr "现金流入"
-
-#. module: account_dynamic_reports
-#: model:ins.account.financial.report,name:account_dynamic_reports.ins_cash_out_financial_2
-#: model:ins.account.financial.report,name:account_dynamic_reports.ins_cash_out_investing_2
-#: model:ins.account.financial.report,name:account_dynamic_reports.ins_cash_out_operation_2
-msgid "Cash Out"
-msgstr "现金流出"
-
-#. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:232
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
 #, python-format
 msgid "Code"
 msgstr "科目编号"
@@ -586,19 +531,19 @@ msgstr "公司"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:128
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Comparison"
 msgstr "比较"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:123
+#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:0
 #, python-format
 msgid "Comparison Date from"
 msgstr "比较开始日期"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:132
+#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:0
 #, python-format
 msgid "Comparison Date to"
 msgstr "比较结束日期"
@@ -625,22 +570,11 @@ msgstr "创建时间"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:154
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:227
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:236
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:196
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:204
-#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:207
-#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:213
-#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:219
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:15
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:234
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:304
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:748
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:818
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1034
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1037
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1040
+#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.ins_report_financial
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
@@ -656,51 +590,45 @@ msgstr "币种"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:5
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.ins_report_financial
 #, python-format
 msgid "Current Cash Balance"
-msgstr ""
+msgstr "当前现金余额"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:105
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:110
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:367
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:637
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:881
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1265
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Custom"
 msgstr "自定义"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:651
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Custom Buckets"
 msgstr "自定义跨度"
 
 #. module: account_dynamic_reports
-#: selection:ins.partner.ageing,partner_type:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ageing__partner_type__customer
 msgid "Customer Only"
 msgstr "客户"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:681
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Customers Only"
 msgstr "客户"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:213
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:182
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:228
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:742
-#: selection:ins.financial.report,filter_cmp:0
-#: selection:ins.general.ledger,sort_accounts_by:0
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__filter_cmp__filter_date
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__sort_accounts_by__date
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.ins_financial_report_wiz_modified
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
@@ -718,61 +646,43 @@ msgstr "报表日期"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:184
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:391
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:905
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1289
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Date Range:"
 msgstr "报表日期："
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:103
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:129
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:114
-#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:139
+#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:0
 #, python-format
 msgid "Date from"
 msgstr "开始日期"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:112
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:134
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:119
-#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:144
+#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:0
 #, python-format
 msgid "Date to"
 msgstr "结束日期"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:105
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:367
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:637
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:881
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1265
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Dates"
 msgstr "日期"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:152
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:225
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:234
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:194
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:202
-#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:205
-#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:211
-#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:217
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:14
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:233
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:303
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:747
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:817
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1033
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1036
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1039
+#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.ins_report_financial
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
@@ -812,9 +722,9 @@ msgid "Display Name"
 msgstr "显示名称"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:144
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:129
-#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:150
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:0
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_general_ledger__display_accounts
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_partner_ledger__display_accounts
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_trial_balance__display_accounts
@@ -823,12 +733,12 @@ msgid "Display accounts"
 msgstr "显示科目"
 
 #. module: account_dynamic_reports
-#: selection:ins.account.financial.report,display_detail:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_account_financial_report__display_detail__detail_flat
 msgid "Display children flat"
 msgstr "显示子项目（平级）"
 
 #. module: account_dynamic_reports
-#: selection:ins.account.financial.report,display_detail:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_account_financial_report__display_detail__detail_with_hierarchy
 msgid "Display children with hierarchy"
 msgstr "显示子项目（层级）"
 
@@ -839,8 +749,8 @@ msgstr "显示详情"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:157
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:502
+#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Due Date"
 msgstr "到期日"
@@ -868,11 +778,7 @@ msgstr "结束日期"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:119
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:137
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:379
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:893
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1277
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "End Date :"
 msgstr "结束日期："
@@ -886,25 +792,23 @@ msgstr "结束日期"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1029
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.trial_balance
 #, python-format
 msgid "Ending Balance"
 msgstr "期末余额"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:156
+#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:0
 #, python-format
 msgid "Entry #"
-msgstr ""
+msgstr "凭证#"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:223
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:192
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:232
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:501
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:746
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Entry Label"
 msgstr "备注"
@@ -921,11 +825,7 @@ msgstr "支出"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:97
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:359
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:629
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:873
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1257
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Export (XLSX)"
 msgstr "导出 (XLSX)"
@@ -967,16 +867,17 @@ msgid "Financial reports"
 msgstr "财务报告设定"
 
 #. module: account_dynamic_reports
-#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_financing_activity1
-msgid "Financing Activities"
-msgstr ""
-
-#. module: account_dynamic_reports
 #: model:ir.model.fields,help:account_dynamic_reports.field_ins_account_financial_report__sign
-msgid "For accounts that are typically more debited than credited and that you would like to print as negative amounts in your reports, you should reverse the sign of the balance; e.g.: Expense account. The same applies for accounts that are typically more credited than debited and that you would like to print as positive amounts in your reports; e.g.: Income account."
+msgid ""
+"For accounts that are typically more debited than credited and that you "
+"would like to print as negative amounts in your reports, you should reverse "
+"the sign of the balance; e.g.: Expense account. The same applies for "
+"accounts that are typically more credited than debited and that you would "
+"like to print as positive amounts in your reports; e.g.: Income account."
 msgstr ""
 "系统默认科目余额为：借方 - 贷方。\n"
-"翻转正负号：借方小于贷方的科目，需要显示正数。例如：资产负债表/负债类科目。\n"
+"翻转正负号：借方小于贷方的科目，需要显示正数。例如：资产负债表/负债类科"
+"目。\n"
 "保留正负号：借方大于贷方的科目，保留正数显示。例如：资产负债表/资产类科目。"
 
 #. module: account_dynamic_reports
@@ -985,20 +886,20 @@ msgid "Format"
 msgstr "格式"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/wizard/trial_balance.py:220
+#: code:addons/account_dynamic_reports/wizard/trial_balance.py:0
 #, python-format
 msgid "From date and To dates are mandatory for this report"
-msgstr ""
+msgstr "此报告必须填入开始日期和结束日期"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/wizard/trial_balance.py:217
+#: code:addons/account_dynamic_reports/wizard/trial_balance.py:0
 #, python-format
 msgid "From date must not be less than to date"
-msgstr ""
+msgstr "开始日期必须小于结束日期"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:353
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model:ir.actions.act_window,name:account_dynamic_reports.action_ins_general_ledger_wizard
 #: model:ir.actions.report,name:account_dynamic_reports.action_print_general_ledger
 #: model:ir.ui.menu,name:account_dynamic_reports.account_report_gl
@@ -1013,17 +914,24 @@ msgid "General Ledger Report"
 msgstr "总账"
 
 #. module: account_dynamic_reports
+#: model:ir.model,name:account_dynamic_reports.model_ins_general_ledger
+msgid "General Ledger Reports"
+msgstr "总账"
+
+#. module: account_dynamic_reports
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.view_ins_account_financial_report_search
 msgid "Group By"
 msgstr "分组"
 
 #. module: account_dynamic_reports
 #: model:ir.model.fields,help:account_dynamic_reports.field_ins_financial_report__debit_credit
-msgid "Help to identify debit and credit with balance line for better understanding."
-msgstr ""
+msgid ""
+"Help to identify debit and credit with balance line for better "
+"understanding."
+msgstr "显示借贷栏和余额栏一起，便于查看。"
 
 #. module: account_dynamic_reports
-#: selection:ins.financial.report,view_format:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__view_format__horizontal
 msgid "Horizontal"
 msgstr "水平"
 
@@ -1044,9 +952,7 @@ msgstr ""
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:470
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:713
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:993
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_general_ledger__include_details
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_partner_ageing__include_details
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_partner_ledger__include_details
@@ -1061,17 +967,10 @@ msgid "Include Initial Balance"
 msgstr "显示期初数"
 
 #. module: account_dynamic_reports
-#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_income0
-msgid "Income"
-msgstr "收入"
-
-#. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:154
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:139
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:471
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:994
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1027
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.trial_balance
 #, python-format
 msgid "Initial Balance"
@@ -1079,42 +978,36 @@ msgstr "期初数"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:4
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.ins_report_financial
 #, python-format
 msgid "Initial Cash Balance"
 msgstr "期初现金"
 
 #. module: account_dynamic_reports
-#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_investing_activity0
-msgid "Investing Activities"
-msgstr "投资活动"
-
-#. module: account_dynamic_reports
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.ins_general_ledger_wizard
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.ins_partner_ledger_wizard
 msgid "It will show detailed lines in reports"
-msgstr ""
+msgstr "会在报告中显示明细行"
 
 #. module: account_dynamic_reports
-#: selection:ins.account.financial.report,style_overwrite:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_account_financial_report__style_overwrite__5
 msgid "Italic Text (smaller)"
-msgstr ""
+msgstr "斜体（小）"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:215
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:184
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:229
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:743
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "JRNL"
 msgstr "凭证"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:158
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:503
+#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
 #, python-format
@@ -1122,14 +1015,14 @@ msgid "Journal"
 msgstr "日记账"
 
 #. module: account_dynamic_reports
-#: selection:ins.general.ledger,sort_accounts_by:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__sort_accounts_by__journal
 msgid "Journal and Partner"
 msgstr "日记账、业务伙伴"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:162
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:147
-#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:157
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_trial_balance_xlsx.py:0
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_financial_report__journal_ids
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_general_ledger__journal_ids
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_partner_ledger__journal_ids
@@ -1140,19 +1033,17 @@ msgstr "日记账"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:149
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:409
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:943
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1307
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Journals:"
 msgstr "日记账："
 
 #. module: account_dynamic_reports
-#: selection:ins.financial.report,date_range:0
-#: selection:ins.general.ledger,date_range:0
-#: selection:ins.partner.ledger,date_range:0
-#: selection:ins.trial.balance,date_range:0 selection:res.company,date_range:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__date_range__last_financial_year
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__date_range__last_financial_year
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__date_range__last_financial_year
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_trial_balance__date_range__last_financial_year
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__res_company__date_range__last_financial_year
 msgid "Last Financial Year"
 msgstr "上个会计年度"
 
@@ -1173,28 +1064,24 @@ msgstr "最后修改日"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:195
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:402
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:916
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1300
-#: selection:ins.financial.report,date_range:0
-#: selection:ins.general.ledger,date_range:0
-#: selection:ins.partner.ledger,date_range:0
-#: selection:ins.trial.balance,date_range:0 selection:res.company,date_range:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__date_range__last_month
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__date_range__last_month
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__date_range__last_month
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_trial_balance__date_range__last_month
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__res_company__date_range__last_month
 #, python-format
 msgid "Last Month"
 msgstr "上月"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:196
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:403
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:917
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1301
-#: selection:ins.financial.report,date_range:0
-#: selection:ins.general.ledger,date_range:0
-#: selection:ins.partner.ledger,date_range:0
-#: selection:ins.trial.balance,date_range:0 selection:res.company,date_range:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__date_range__last_quarter
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__date_range__last_quarter
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__date_range__last_quarter
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_trial_balance__date_range__last_quarter
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__res_company__date_range__last_quarter
 #, python-format
 msgid "Last Quarter"
 msgstr "上季度"
@@ -1221,24 +1108,19 @@ msgstr "最后更新时间"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:194
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:401
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:915
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1299
-#: selection:ins.financial.report,date_range:0
-#: selection:ins.general.ledger,date_range:0
-#: selection:ins.partner.ledger,date_range:0
-#: selection:ins.trial.balance,date_range:0 selection:res.company,date_range:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__date_range__last_week
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__date_range__last_week
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__date_range__last_week
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_trial_balance__date_range__last_week
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__res_company__date_range__last_week
 #, python-format
 msgid "Last Week"
 msgstr "上周"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:197
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:404
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:918
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1302
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Last Year"
 msgstr "上一年"
@@ -1249,22 +1131,15 @@ msgid "Level"
 msgstr "层级"
 
 #. module: account_dynamic_reports
-#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_liability0
-#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_liabilitysum0
-msgid "Liability"
-msgstr "负债"
-
-#. module: account_dynamic_reports
-#: selection:ins.account.financial.report,style_overwrite:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_account_financial_report__style_overwrite__1
 msgid "Main Title 1 (bold, underlined)"
-msgstr ""
+msgstr "主标题1（加粗，下划线）"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:221
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:190
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:231
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:745
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
 #, python-format
@@ -1272,47 +1147,37 @@ msgid "Move"
 msgstr "分录"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:150
-#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:181
+#: code:addons/account_dynamic_reports/report/report_financial_report_xlsx.py:0
 #, python-format
 msgid "Name"
 msgstr "名称"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:5
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.ins_report_financial
 #, python-format
 msgid "Net Cash Balance"
 msgstr "总现金余额"
 
 #. module: account_dynamic_reports
-#: selection:ins.financial.report,filter_cmp:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__filter_cmp__filter_no
 msgid "No Filters"
 msgstr "显示全部"
 
 #. module: account_dynamic_reports
-#: selection:ins.account.financial.report,display_detail:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_account_financial_report__display_detail__no_detail
 msgid "No detail"
 msgstr "不显示细节"
 
 #. module: account_dynamic_reports
-#: selection:ins.account.financial.report,style_overwrite:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_account_financial_report__style_overwrite__4
 msgid "Normal Text"
 msgstr "正常字体"
 
 #. module: account_dynamic_reports
-#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_operation0
-msgid "Operations"
-msgstr "操作"
-
-#. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:202
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:466
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:709
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:989
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1331
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Options:"
 msgstr "选项："
@@ -1338,12 +1203,10 @@ msgstr "上级报表"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:217
-#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:161
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:186
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:201
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:230
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:816
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_partner_ageing__partner_ids
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ageing
@@ -1354,7 +1217,7 @@ msgstr "业务伙伴"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:623
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model:ir.actions.act_window,name:account_dynamic_reports.action_ins_partner_ageing_wizard
 #: model:ir.actions.report,name:account_dynamic_reports.action_print_partner_ageing
 #: model:ir.ui.menu,name:account_dynamic_reports.account_report_pa
@@ -1369,8 +1232,13 @@ msgid "Partner Ageing Report"
 msgstr "业务伙伴账龄表"
 
 #. module: account_dynamic_reports
+#: model:ir.model,name:account_dynamic_reports.model_ins_partner_ageing
+msgid "Partner Ageing Reports"
+msgstr "业务伙伴账龄表"
+
+#. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:867
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model:ir.actions.act_window,name:account_dynamic_reports.action_ins_partner_ledger_wizard
 #: model:ir.actions.report,name:account_dynamic_reports.action_print_partner_ledger
 #: model:ir.ui.menu,name:account_dynamic_reports.account_report_plg
@@ -1385,8 +1253,13 @@ msgid "Partner Ledger Report"
 msgstr "业务伙伴分类账"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:145
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:163
+#: model:ir.model,name:account_dynamic_reports.model_ins_partner_ledger
+msgid "Partner Ledger Reports"
+msgstr "业务伙伴分类账"
+
+#. module: account_dynamic_reports
+#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:0
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_partner_ageing__partner_category_ids
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_partner_ledger__partner_category_ids
 #, python-format
@@ -1395,8 +1268,7 @@ msgstr "业务伙伴标签"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:698
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:978
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Partner Tag:"
 msgstr "业务伙伴标签："
@@ -1408,15 +1280,15 @@ msgstr "业务伙伴类型"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:677
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Partner Type:"
 msgstr "业务伙伴类型："
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:170
-#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:137
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:155
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:0
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_general_ledger__partner_ids
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_partner_ledger__partner_ids
 #, python-format
@@ -1425,55 +1297,51 @@ msgstr "业务伙伴"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:687
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:967
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Partners:"
 msgstr "业务伙伴："
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:672
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:928
-#: selection:ins.partner.ageing,type:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ageing__type__payable
 #, python-format
 msgid "Payable Accounts Only"
 msgstr "应付科目"
 
 #. module: account_dynamic_reports
-#: selection:ins.partner.ledger,type:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__type__payable
 msgid "Payable only"
-msgstr "应付科目"
+msgstr "应付"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/wizard/financial_report.py:508
-#: code:addons/account_dynamic_reports/wizard/general_ledger.py:770
-#: code:addons/account_dynamic_reports/wizard/partner_ageing.py:576
-#: code:addons/account_dynamic_reports/wizard/partner_ledger.py:767
-#: code:addons/account_dynamic_reports/wizard/trial_balance.py:554
+#: code:addons/account_dynamic_reports/wizard/financial_report.py:0
+#: code:addons/account_dynamic_reports/wizard/general_ledger.py:0
+#: code:addons/account_dynamic_reports/wizard/partner_ageing.py:0
+#: code:addons/account_dynamic_reports/wizard/partner_ledger.py:0
+#: code:addons/account_dynamic_reports/wizard/trial_balance.py:0
 #, python-format
-msgid "Please install a free module \"dynamic_xlsx\".You can get it by contacting \"pycustech@gmail.com\". It is free"
+msgid ""
+"Please install a free module \"dynamic_xlsx\".You can get it by contacting "
+"\"pycustech@gmail.com\". It is free"
 msgstr ""
 
 #. module: account_dynamic_reports
-#: selection:ins.general.ledger,target_moves:0
-#: selection:ins.partner.ledger,target_moves:0
-#: selection:ins.trial.balance,target_moves:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__target_moves__posted_only
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__target_moves__posted_only
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_trial_balance__target_moves__posted_only
 msgid "Posted Only"
 msgstr "已过账"
 
 #. module: account_dynamic_reports
-#: selection:ins.account.financial.report,sign:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_account_financial_report__sign__1
 msgid "Preserve balance sign"
 msgstr "保留正负号"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:96
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:358
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:628
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:872
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1256
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Print (Pdf)"
 msgstr "打印（PDF）"
@@ -1484,7 +1352,6 @@ msgid "Profit (Loss) to report"
 msgstr "利润表"
 
 #. module: account_dynamic_reports
-#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_profitandloss0
 #: model:ir.actions.act_window,name:account_dynamic_reports.action_ins_profit_and_loss_report
 #: model:ir.actions.client,name:account_dynamic_reports.action_dynamic_allinone_pl_report
 #: model:ir.ui.menu,name:account_dynamic_reports.account_report_pandl
@@ -1494,17 +1361,16 @@ msgstr "利润表"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:671
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:927
-#: selection:ins.partner.ageing,type:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ageing__type__receivable
 #, python-format
 msgid "Receivable Accounts Only"
 msgstr "应收科目"
 
 #. module: account_dynamic_reports
-#: selection:ins.partner.ledger,type:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__type__receivable
 msgid "Receivable Only"
-msgstr "应收科目"
+msgstr "应收"
 
 #. module: account_dynamic_reports
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_partner_ledger__reconciled
@@ -1513,20 +1379,20 @@ msgstr "核销类型"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:134
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:937
+#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Reconciled"
 msgstr "已核销"
 
 #. module: account_dynamic_reports
-#: selection:ins.partner.ledger,reconciled:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__reconciled__reconciled
 msgid "Reconciled Only"
 msgstr "已核销"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:933
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Reconciled:"
 msgstr "已核销："
@@ -1553,13 +1419,13 @@ msgid "Report Type"
 msgstr "报表类型"
 
 #. module: account_dynamic_reports
-#: selection:ins.account.financial.report,type:0
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_account_financial_report__account_report_id
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_account_financial_report__type__account_report
 msgid "Report Value"
 msgstr "报表"
 
 #. module: account_dynamic_reports
-#: selection:ins.account.financial.report,sign:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_account_financial_report__sign__-1
 msgid "Reverse balance sign"
 msgstr "翻转正负号"
 
@@ -1570,14 +1436,14 @@ msgstr "序号"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:206
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Show Debit Credit"
 msgstr "显示借方/贷方栏"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1336
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_trial_balance__show_hierarchy
 #, python-format
 msgid "Show hierarchy"
@@ -1589,7 +1455,7 @@ msgid "Sign on Reports"
 msgstr "翻转正负号"
 
 #. module: account_dynamic_reports
-#: selection:ins.account.financial.report,style_overwrite:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_account_financial_report__style_overwrite__6
 msgid "Smallest Text"
 msgstr "最小字体"
 
@@ -1599,7 +1465,7 @@ msgid "Sort By"
 msgstr "排序"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:149
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
 #, python-format
 msgid "Sort by"
 msgstr "排序"
@@ -1612,11 +1478,7 @@ msgstr "开始日期"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:112
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:130
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:372
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:886
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1270
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Start Date :"
 msgstr "开始日期："
@@ -1634,13 +1496,13 @@ msgid "Strict Range"
 msgstr ""
 
 #. module: account_dynamic_reports
-#: selection:ins.partner.ageing,partner_type:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ageing__partner_type__supplier
 msgid "Supplier Only"
 msgstr "供应商"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:682
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Suppliers Only"
 msgstr "供应商"
@@ -1654,107 +1516,97 @@ msgid "Target Moves"
 msgstr "已过账分录/所有分录"
 
 #. module: account_dynamic_reports
-#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:139
-#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:124
+#: code:addons/account_dynamic_reports/report/report_general_ledger_xlsx.py:0
+#: code:addons/account_dynamic_reports/report/report_partner_ledger_xlsx.py:0
 #, python-format
 msgid "Target moves"
 msgstr "已过账分录/所有分录"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:190
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:397
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:911
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1295
-#: selection:ins.financial.report,date_range:0
-#: selection:ins.general.ledger,date_range:0
-#: selection:ins.partner.ledger,date_range:0
-#: selection:ins.trial.balance,date_range:0 selection:res.company,date_range:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__date_range__this_month
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__date_range__this_month
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__date_range__this_month
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_trial_balance__date_range__this_month
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__res_company__date_range__this_month
 #, python-format
 msgid "This Month"
 msgstr "本月"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:191
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:398
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:912
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1296
-#: selection:ins.financial.report,date_range:0
-#: selection:ins.general.ledger,date_range:0
-#: selection:ins.partner.ledger,date_range:0
-#: selection:ins.trial.balance,date_range:0 selection:res.company,date_range:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__date_range__this_quarter
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__date_range__this_quarter
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__date_range__this_quarter
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_trial_balance__date_range__this_quarter
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__res_company__date_range__this_quarter
 #, python-format
 msgid "This Quarter"
 msgstr "本季度"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:189
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:396
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:910
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1294
-#: selection:ins.financial.report,date_range:0
-#: selection:ins.general.ledger,date_range:0
-#: selection:ins.partner.ledger,date_range:0
-#: selection:ins.trial.balance,date_range:0 selection:res.company,date_range:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__date_range__this_week
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__date_range__this_week
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__date_range__this_week
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_trial_balance__date_range__this_week
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__res_company__date_range__this_week
 #, python-format
 msgid "This Week"
 msgstr "本周"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:192
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:399
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:913
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1297
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "This Year"
 msgstr "本年"
 
 #. module: account_dynamic_reports
-#: selection:ins.financial.report,date_range:0
-#: selection:ins.general.ledger,date_range:0
-#: selection:ins.partner.ledger,date_range:0
-#: selection:ins.trial.balance,date_range:0 selection:res.company,date_range:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__date_range__this_financial_year
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__date_range__this_financial_year
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__date_range__this_financial_year
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_trial_balance__date_range__this_financial_year
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__res_company__date_range__this_financial_year
 msgid "This financial Year"
 msgstr "本会计年度"
 
 #. module: account_dynamic_reports
 #: model:ir.model.fields,help:account_dynamic_reports.field_ins_financial_report__label_filter
-msgid "This label will be displayed on report to show the balance computed for the given comparison filter."
+msgid ""
+"This label will be displayed on report to show the balance computed for the "
+"given comparison filter."
 msgstr "这个标签会显示筛选比较列的余额。"
 
 #. module: account_dynamic_reports
-#: selection:ins.account.financial.report,style_overwrite:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_account_financial_report__style_overwrite__2
 msgid "Title 2 (bold)"
 msgstr "标题2（加粗）"
 
 #. module: account_dynamic_reports
-#: selection:ins.account.financial.report,style_overwrite:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_account_financial_report__style_overwrite__3
 msgid "Title 3 (bold, smaller)"
 msgstr "标题3（加粗，小号字体）"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:188
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:395
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:909
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1293
-#: selection:ins.financial.report,date_range:0
-#: selection:ins.general.ledger,date_range:0
-#: selection:ins.partner.ledger,date_range:0
-#: selection:ins.trial.balance,date_range:0 selection:res.company,date_range:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__date_range__today
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__date_range__today
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__date_range__today
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_trial_balance__date_range__today
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__res_company__date_range__today
 #, python-format
 msgid "Today"
 msgstr "今天"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:168
-#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:190
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:563
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:605
+#: code:addons/account_dynamic_reports/report/report_partner_ageing_xlsx.py:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ageing
 #, python-format
 msgid "Total"
@@ -1762,7 +1614,7 @@ msgstr "总计"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1251
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #: model:ir.actions.act_window,name:account_dynamic_reports.action_ins_trial_balance_wizard
 #: model:ir.actions.report,name:account_dynamic_reports.action_print_trial_balance
 #: model:ir.ui.menu,name:account_dynamic_reports.account_report_tb
@@ -1777,6 +1629,11 @@ msgid "Trial Balance Report"
 msgstr "试算表"
 
 #. module: account_dynamic_reports
+#: model:ir.model,name:account_dynamic_reports.model_ins_trial_balance
+msgid "Trial Balance Reports"
+msgstr "试算表"
+
+#. module: account_dynamic_reports
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_account_financial_report__type
 #: model:ir.model.fields,field_description:account_dynamic_reports.field_ins_partner_ageing__type
 msgid "Type"
@@ -1784,29 +1641,20 @@ msgstr "类型"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:52
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:59
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:256
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:315
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:521
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:573
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:770
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:829
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1055
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1133
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Unfolded"
 msgstr ""
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:938
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "Unreconciled"
 msgstr "未核销"
 
 #. module: account_dynamic_reports
-#: selection:ins.partner.ledger,reconciled:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__reconciled__unreconciled
 msgid "Unreconciled Only"
 msgstr "未核销"
 
@@ -1830,52 +1678,46 @@ msgid "VIEW"
 msgstr "视图"
 
 #. module: account_dynamic_reports
-#: selection:ins.financial.report,view_format:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__view_format__vertical
 msgid "Vertical"
 msgstr "垂直"
 
 #. module: account_dynamic_reports
-#: selection:ins.account.financial.report,type:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_account_financial_report__type__sum
 msgid "View"
 msgstr "视图"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:67
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1062
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1141
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "View General Ledger"
 msgstr "显示总账"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:263
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:528
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:777
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "View Source move"
 msgstr "显示明细"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:996
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "With Balance < Zero"
 msgstr "余额 < 0"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:997
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "With Balance > Zero"
 msgstr "余额 >0"
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:472
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:995
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1335
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "With Balance not Zero"
 msgstr "余额≠0的科目"
@@ -1891,13 +1733,13 @@ msgid "With balance less than zero"
 msgstr "余额小于0"
 
 #. module: account_dynamic_reports
-#: selection:ins.general.ledger,display_accounts:0
-#: selection:ins.partner.ledger,display_accounts:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__display_accounts__balance_not_zero
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__display_accounts__balance_not_zero
 msgid "With balance not equal to zero"
 msgstr "余额≠0"
 
 #. module: account_dynamic_reports
-#: selection:ins.trial.balance,display_accounts:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_trial_balance__display_accounts__balance_not_zero
 msgid "With balance not zero"
 msgstr "余额≠0的科目"
 
@@ -1912,42 +1754,23 @@ msgstr ""
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:193
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:400
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:914
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1298
-#: selection:ins.financial.report,date_range:0
-#: selection:ins.general.ledger,date_range:0
-#: selection:ins.partner.ledger,date_range:0
-#: selection:ins.trial.balance,date_range:0 selection:res.company,date_range:0
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_financial_report__date_range__yesterday
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_general_ledger__date_range__yesterday
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_partner_ledger__date_range__yesterday
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__ins_trial_balance__date_range__yesterday
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__res_company__date_range__yesterday
 #, python-format
 msgid "Yesterday"
 msgstr "昨天"
 
 #. module: account_dynamic_reports
 #: model:ir.model.fields,help:account_dynamic_reports.field_ins_account_financial_report__style_overwrite
-msgid "You can set up here the format you want this record to be displayed. If you leave the automatic formatting, it will be computed based on the financial reports hierarchy (auto-computed field 'level')."
+msgid ""
+"You can set up here the format you want this record to be displayed. If you "
+"leave the automatic formatting, it will be computed based on the financial "
+"reports hierarchy (auto-computed field 'level')."
 msgstr "选择您需要的报表样式。自动套用格式：自动选用树状层级。"
-
-#. module: account_dynamic_reports
-#: model:ir.model,name:account_dynamic_reports.model_ins_general_ledger
-msgid "ins.general.ledger"
-msgstr ""
-
-#. module: account_dynamic_reports
-#: model:ir.model,name:account_dynamic_reports.model_ins_partner_ageing
-msgid "ins.partner.ageing"
-msgstr ""
-
-#. module: account_dynamic_reports
-#: model:ir.model,name:account_dynamic_reports.model_ins_partner_ledger
-msgid "ins.partner.ledger"
-msgstr ""
-
-#. module: account_dynamic_reports
-#: model:ir.model,name:account_dynamic_reports.model_ins_trial_balance
-msgid "ins.trial.balance"
-msgstr ""
 
 #. module: account_dynamic_reports
 #: model:ir.model,name:account_dynamic_reports.model_report_account_dynamic_reports_general_ledger
@@ -1971,7 +1794,71 @@ msgstr ""
 
 #. module: account_dynamic_reports
 #. openerp-web
-#: code:addons/account_dynamic_reports/static/src/xml/view.xml:1028
+#: code:addons/account_dynamic_reports/static/src/xml/view.xml:0
 #, python-format
 msgid "to"
+msgstr ""
+
+#. module: account_dynamic_reports
+#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_income0
+msgid "净利润"
+msgstr ""
+
+#. module: account_dynamic_reports
+#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_profitandloss0
+msgid "利润表"
+msgstr ""
+
+#. module: account_dynamic_reports
+#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_investing_activity0
+msgid "投资活动"
+msgstr ""
+
+#. module: account_dynamic_reports
+#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_liability0
+msgid "流动负债"
+msgstr ""
+
+#. module: account_dynamic_reports
+#: model:ins.account.financial.report,name:account_dynamic_reports.ins_cash_in_financial_1
+#: model:ins.account.financial.report,name:account_dynamic_reports.ins_cash_in_investing_1
+#: model:ins.account.financial.report,name:account_dynamic_reports.ins_cash_in_operation_1
+msgid "现金流入"
+msgstr ""
+
+#. module: account_dynamic_reports
+#: model:ins.account.financial.report,name:account_dynamic_reports.ins_cash_out_financial_2
+#: model:ins.account.financial.report,name:account_dynamic_reports.ins_cash_out_investing_2
+#: model:ins.account.financial.report,name:account_dynamic_reports.ins_cash_out_operation_2
+msgid "现金流出"
+msgstr ""
+
+#. module: account_dynamic_reports
+#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_cash_flow0
+msgid "现金流量表"
+msgstr ""
+
+#. module: account_dynamic_reports
+#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_financing_activity1
+msgid "筹资活动"
+msgstr ""
+
+#. module: account_dynamic_reports
+#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_operation0
+msgid "经营活动"
+msgstr ""
+
+#. module: account_dynamic_reports
+#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_liabilitysum0
+msgid "负债和所有者权益"
+msgstr ""
+
+#. module: account_dynamic_reports
+#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_assets0
+msgid "资产"
+msgstr ""
+
+#. module: account_dynamic_reports
+#: model:ins.account.financial.report,name:account_dynamic_reports.ins_account_financial_report_balancesheet0
+msgid "资产负债表"
 msgstr ""
