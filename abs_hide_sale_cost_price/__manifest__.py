@@ -28,7 +28,7 @@
     'website': 'http://www.asceticbs.com',
     'description': """
 """,
-    'version': '1.0',
+    'version': '13.0',
     'depends': ['base','sale_management'],
     'data': ['security/show_sale_cost_price_fields.xml','views/view_sale_cost_price_product.xml'
            ],

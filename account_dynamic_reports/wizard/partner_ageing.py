@@ -18,7 +18,7 @@ class InsPartnerAgeing(models.TransientModel):
             company_id = self.env.user.company_id
             if self.partner_type == 'customer':
                 partner_company_domain = [('parent_id', '=', False),
-                                          ('customer', '=', True),
+                                          ('customer_rank', '>', 0),
                                           '|',
                                           ('company_id', '=', company_id.id),
                                           ('company_id', '=', False)]
@@ -26,7 +26,7 @@ class InsPartnerAgeing(models.TransientModel):
                 self.partner_ids |= self.env['res.partner'].search(partner_company_domain)
             if self.partner_type == 'supplier':
                 partner_company_domain = [('parent_id', '=', False),
-                                          ('supplier', '=', True),
+                                          ('supplier_rank', '>', 0),
                                           '|',
                                           ('company_id', '=', company_id.id),
                                           ('company_id', '=', False)]
@@ -110,8 +110,8 @@ class InsPartnerAgeing(models.TransientModel):
         company_id = self.env.user.company_id
         partner_company_domain = [('parent_id','=', False),
                                   '|',
-                                  ('customer', '=', True),
-                                  ('supplier', '=', True),
+                                  ('customer_rank', '>', 0),
+                                  ('supplier_rank', '>', 0),
                                   '|',
                                   ('company_id', '=', company_id.id),
                                   ('company_id', '=', False)]
@@ -430,9 +430,9 @@ class InsPartnerAgeing(models.TransientModel):
         company_id = self.env.user.company_id
         domain = ['|',('company_id','=',company_id.id),('company_id','=',False)]
         if self.partner_type == 'customer':
-            domain.append(('customer','=', True))
+            domain.append(('customer_rank','>', 0))
         if self.partner_type == 'supplier':
-            domain.append(('supplier','=', True))
+            domain.append(('supplier_rank','>', 0))
 
         if self.partner_category_ids:
             domain.append(('category_id','in',self.partner_category_ids.ids))

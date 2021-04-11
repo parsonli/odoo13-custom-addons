@@ -9,4 +9,5 @@
         <field name="category_id" ref="base.module_category_usability"/>
         <field name="name">Show cost price in product</field>        
     </record>
+
 </odoo>

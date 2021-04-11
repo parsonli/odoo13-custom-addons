@@ -70,6 +70,12 @@ class ResPartner(models.Model):
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
+
+    warehouse_id = fields.Many2one(
+        'stock.warehouse', string='Warehouse',
+        required=True, readonly=True, states={'draft': [('readonly', False)], 'sent': [('readonly', False)]},
+        default=_default_warehouse_id, check_company=False)
+
     # 计算是否超过信用额度
     @api.depends('partner_invoice_id.credit', 'partner_invoice_id.parent_credit', 'partner_invoice_id.credit_limit')
     def is_over_credit(self):

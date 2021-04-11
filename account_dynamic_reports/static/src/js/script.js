@@ -506,11 +506,11 @@ context: context,
 self.do_notify(_("Redirected"), "Window has been redirected");
 return self.do_action(action);
 };
-self._rpc({model: 'account.invoice',method: 'search_read',
-domain: [['move_id', '=', $(event.currentTarget).data('move-id')]],
+self._rpc({model: 'account.move',method: 'search_read',
+domain: [['id', '=', $(event.currentTarget).data('move-id')]],
 fields: ['id'],limit: 1,})
 .then(function(record) {
-if(record.length > 0){redirect_to_document('account.invoice', record[0].id);
+if(record.length > 0){redirect_to_document('account.move', record[0].id);
 }else{redirect_to_document('account.move', $(event.currentTarget).data('move-id'));
 }});},
 update_with_filter : function(event){
@@ -841,11 +841,11 @@ context: context,
 self.do_notify(_("Redirected"), "Window has been redirected");
 return self.do_action(action);
 };
-self._rpc({model: 'account.invoice',method: 'search_read',
-domain: [['move_id', '=', $(event.currentTarget).data('move-id')]],
+self._rpc({model: 'account.move',method: 'search_read',
+domain: [['id', '=', $(event.currentTarget).data('move-id')]],
 fields: ['id'],limit: 1,})
 .then(function(record) {
-if(record.length > 0){redirect_to_document('account.invoice', record[0].id);
+if(record.length > 0){redirect_to_document('account.move', record[0].id);
 }else{redirect_to_document('account.move', $(event.currentTarget).data('move-id'));
 }});},
 update_with_filter : function(event){
@@ -1155,11 +1155,11 @@ context: context,
 self.do_notify(_("Redirected"), "Window has been redirected");
 return self.do_action(action);
 };
-self._rpc({model: 'account.invoice',method: 'search_read',
-domain: [['move_id', '=', $(event.currentTarget).data('move-id')]],
+self._rpc({model: 'account.move',method: 'search_read',
+domain: [['id', '=', $(event.currentTarget).data('move-id')]],
 fields: ['id'],limit: 1,})
 .then(function(record) {
-if(record.length > 0){redirect_to_document('account.invoice', record[0].id);
+if(record.length > 0){redirect_to_document('account.move', record[0].id);
 }else{redirect_to_document('account.move', $(event.currentTarget).data('move-id'));
 }});},
 update_with_filter : function(event){

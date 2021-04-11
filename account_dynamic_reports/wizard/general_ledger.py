@@ -705,8 +705,8 @@ class InsGeneralLedger(models.TransientModel):
         company_domain = [('company_id','=', company_id.id)]
         partner_company_domain = [('parent_id','=', False),
                                   '|',
-                                    ('customer','=',True),
-                                    ('supplier','=',True),
+                                    ('customer_rank','>',0),
+                                    ('supplier_rank','>',0),
                                   '|',
                                     ('company_id','=', company_id.id),
                                     ('company_id','=',False)]
