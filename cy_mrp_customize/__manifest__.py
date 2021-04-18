@@ -20,6 +20,7 @@
     ],
     'data': [
             'views/mrp_view_cy.xml',
+            'report/mrp_production_cy.xml',
             ],
     'qweb': [
 

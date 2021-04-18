@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- 生产任务单form界面修改 -->
-    <record id="mrp_production_form_view_cy" model="ir.ui.view">
-        <field name="name">mrp.production.form.cy</field>
-        <field name="model">mrp.production</field>
-        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
-        <field name="arch" type="xml">
-
-            <xpath expr="//field[@name='date_planned_start']" position="replace">
-                <!-- Add your fields or attributes here -->
-                <field name="date_planned_start" invisible="1"/>
-            </xpath>
-
-            <xpath expr="//field[@name='date_planned_finished']" position="replace">
-                <!-- Add your fields or attributes here -->
-                <field string="交货期" name="date_planned_finished" invisible="0"/>
-            </xpath>
-
-        </field>
-    </record>
     <!-- 针式票据打印二等分 纸张格式 -->
-    <record id="paperformat_cy_landscape"
+    <record id="paperformat_report_production_cy"
             model="report.paperformat">
         <field name="name">针式票据打印二等分</field>
         <field name="default" eval="True"/>
@@ -38,18 +19,18 @@
     <!-- 打印生产任务单的动作 -->
     <report
             string="才用生产任务单"
-            id="action_report_production_order_cy"
+            id="action_report_production_cy"
             model="mrp.production"
-            name="cy_odoo_customize.report_mrporder_cy"
+            name="cy_mrp_customize.report_production_cy"
             report_type="qweb-pdf"
             print_report_name="'任务单 - %s' % object.name"
-            paperformat="paperformat_cy_landscape"
-        />
+            paperformat="paperformat_report_production_cy"
+    />
     <!-- 生产任务单表格 -->
-    <template id="report_mrporder_cy" name="才用生产任务单">
-            <t t-call="web.html_container">
-        <t t-foreach="docs" t-as="o">
-            <t t-call="web.basic_layout">
+    <template id="report_production_cy" name="才用生产任务单">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
                 <div class="page">
                     <h6 class="text-center" style="margin-top:0px; font-size:18px">
                         <span t-field="o.name"/>
@@ -69,42 +50,38 @@
                             <span t-else="">未找到相关单据</span>
                         </div>
                     </div>
-
                     <div  class="d-flex flex-wrap" style="font-size:20px; border:1px solid black;">
-                         <div class="p-2 mt2 mb2">
-                             <span t-field="o.product_id.attribute_value_ids"/>
-                         </div>
+                        <div class="p-2 mt2 mb2">
+                            <span t-field="o.product_id.product_template_attribute_value_ids"/>
+                        </div>
                     </div>
-
                     <div class="row" style="font-size:18px">
                         <div class="col-6">
                             <strong>产品:</strong>
-                            <span t-field="o.product_id"/>
-                        </div>
-                        <div class="col-6">
-                            <strong>在手数量(预测):</strong>
+                            [
+                            <span t-field="o.product_id.default_code"/>
+                            ]
+                            <span t-field="o.product_id.name"/>
+                            <br/>
+                            <strong>在手数量:</strong>
                             <span t-field="o.product_id.qty_available"/>
                             <span t-field="o.product_uom_id.name" groups="uom.group_uom"/>
-                            <span>(</span>
+                            <br/>
+                            <strong>预测数量:</strong>
                             <span t-field="o.product_id.virtual_available"/>
-                            <span>)</span>
+                            <span t-field="o.product_uom_id.name" groups="uom.group_uom"/>
+                        </div>
+                        <div class="col-6">
+                            <strong>待生产数量:</strong>
+                            <span t-field="o.product_qty"/>
+                            <span t-field="o.product_uom_id.name" groups="uom.group_uom"/>
+                            <br/>
+                            <strong>交货期:</strong>
+                            <span t-if="o.date_planned_start">
+                                <span t-esc="o.date_planned_start.strftime('%Y-%m-%d')"/>
+                            </span>
                         </div>
                     </div>
-                    <div class="row" style="font-size:18px">
-                            <div class="col-6">
-                                <strong>待生产数量:</strong>
-                                <span t-field="o.product_qty"/>
-                                <span t-field="o.product_uom_id.name" groups="uom.group_uom"/>
-                            </div>
-                            <div class="col-6">
-                                <strong>交货期:</strong>
-                                <span t-if="o.date_planned_finished">
-                                <span t-esc="o.date_planned_finished.strftime('%Y-%m-%d')"/>
-                                </span>
-                            </div>
-                    </div>
-                    </div>
-
                     <table class="table table-sm text-center" style="font-size:18px;">
                         <thead>
                             <tr>
@@ -129,6 +106,7 @@
                             </tr>
                         </tbody>
                     </table>
+                </div>
                 </t>
             </t>
         </t>

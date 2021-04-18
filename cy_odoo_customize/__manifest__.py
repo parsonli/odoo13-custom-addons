@@ -19,7 +19,6 @@
                 'base', 'account', 'mrp', 'stock', 'sale',
     ],
     'data': [
-            # 'views/cy_mrp_production_templates.xml',
             # 'views/res_partner_view_cy.xml',
             # 'views/stock_picking_cy.xml',
             # 'views/sale_order_view_cy.xml',
