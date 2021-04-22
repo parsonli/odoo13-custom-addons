@@ -64,6 +64,8 @@ class ResPartner(models.Model):
         for rec in self:
             if not rec.is_company:
                 rec.parent_credit = rec.parent_id.credit
+            else:
+                rec.parent_credit = 0
 
     parent_credit = fields.Monetary(compute=credit_from_parent, readonly='True')
 
@@ -72,6 +74,10 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     warehouse_id = fields.Many2one(check_company=False)
+
+    @api.onchange('company_id')
+    def _onchange_company_id(self):
+        return self
 
     # 计算是否超过信用额度
     @api.depends('partner_invoice_id.credit', 'partner_invoice_id.parent_credit', 'partner_invoice_id.credit_limit')

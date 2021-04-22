@@ -19,8 +19,8 @@
                         <field name="invoice_date" optional="show" invisible="context.get('default_type') not in ('out_invoice', 'out_refund','out_receipt')" string="发票日期"/>
                         <field name="invoice_origin" optional="show" string="源文档"/>
                         <field name="name" string="凭证号"/>
-                        <field name="ref" optional="hide" string="发票号"/>
-                        <field name="invoice_payment_ref" optional="hide" string="付款参考"/>
+                        <field name="ref" optional="hide" string="参考"/>
+                        <field name="invoice_payment_ref" optional="hide" string="发票号"/>
                         <field name="invoice_user_id" optional="show" invisible="context.get('default_type') not in ('out_invoice', 'out_refund','out_receipt')" string="业务员"/>
                         <field name="invoice_date_due" optional="show"/>
                         <field name="amount_untaxed_signed" string="未税" sum="Total" optional="show"/>
@@ -42,9 +42,9 @@
             <field name="model">account.move</field>
             <field name="inherit_id" ref="account.view_move_form"/>
             <field name="arch" type="xml">
-<!--                <xpath expr="//field[@name='date_due']" position="after">-->
-<!--                    <field name="name" string="发票号"/>-->
-<!--                </xpath>-->
+                <xpath expr="//field[@name='ref']" position="after">
+                    <field name="invoice_payment_ref" string="发票号"/>
+                </xpath>
                 <xpath expr="//group[@id='header_left_group']/field[@name='partner_id']" position="attributes">
                     <attribute name="options">{'no_create':True}</attribute>
                 </xpath>
@@ -92,73 +92,5 @@
                 </xpath>
             </field>
         </record>
-        <!-- 修改 invoice supplier tree 表单-->
-<!--        <record id="invoice_supplier_tree_cy" model="ir.ui.view">-->
-<!--            <field name="name">invoice.supplier.tree.cy</field>-->
-<!--            <field name="model">account.invoice</field>-->
-<!--            <field name="inherit_id" ref="account.invoice_supplier_tree"/>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <xpath expr="//field[@name='company_id']" position="replace"></xpath>-->
-<!--                <xpath expr="//field[@name='partner_id']" position="before">-->
-<!--                    <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>-->
-<!--                </xpath>-->
-<!--                <xpath expr="//field[@name='number']" position="attributes">-->
-<!--                    <attribute name="string">凭证号</attribute>-->
-<!--                </xpath>-->
-<!--                <xpath expr="//field[@name='name']" position="replace">-->
-<!--                    <field name="name" string="发票号"/>-->
-<!--                </xpath>-->
-<!--                <xpath expr="//field[@name='reference']" position="attributes">-->
-<!--                    <attribute name="invisible">1</attribute>-->
-<!--                </xpath>-->
-<!--                <xpath expr="//field[@name='origin']" position="attributes">-->
-<!--                    <attribute name="invisible">1</attribute>-->
-<!--                </xpath>-->
-<!--            </field>-->
-<!--        </record>-->
-        <!-- 修改 invoice supplier form 表单-->
-<!--        <record id="invoice_supplier_form_cy" model="ir.ui.view">-->
-<!--            <field name="name">invoice.supplier.form.cy</field>-->
-<!--            <field name="model">account.invoice</field>-->
-<!--            <field name="inherit_id" ref="account.invoice_supplier_form"/>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <xpath expr="//field[@name='date_due']" position="after">-->
-<!--                    <field name="name" string="发票号"/>-->
-<!--                </xpath>-->
-<!--                <xpath expr="//field[@name='partner_id']" position="attributes">-->
-<!--                    <attribute name="options">{'no_create':True}</attribute>-->
-<!--                </xpath>-->
-<!--                <xpath expr="//field[@name='product_id']" position="attributes">-->
-<!--                    <attribute name="options">{'no_create':True}</attribute>-->
-<!--                </xpath>-->
-<!--                <xpath expr="//field[@name='account_id']" position="attributes">-->
-<!--                    <attribute name="options">{'no_create':True}</attribute>-->
-<!--                </xpath>-->
-<!--                <xpath expr="//field[@name='account_analytic_id']" position="attributes">-->
-<!--                    <attribute name="invisible">1</attribute>-->
-<!--                </xpath>-->
-<!--                <xpath expr="//field[@name='analytic_tag_ids']" position="attributes">-->
-<!--                    <attribute name="invisible">1</attribute>-->
-<!--                </xpath>-->
-<!--                <xpath expr="//field[@name='uom_id']" position="attributes">-->
-<!--                    <attribute name="options">{'no_create':True}</attribute>-->
-<!--                </xpath>-->
-<!--            </field>-->
-<!--        </record>-->
-
-        <!-- 修改 invoice search 表单 -->
-<!--        <record id="account_invoice_select_cy" model="ir.ui.view">-->
-<!--            <field name="name">account.invoice.select.cy</field>-->
-<!--            <field name="model">account.invoice</field>-->
-<!--            <field name="inherit_id" ref="account.view_account_invoice_filter"/>-->
-<!--            <field name="arch" type="xml">-->
-
-<!--                <xpath expr="//field[@name='number']" position="replace">-->
-<!--                    <field name="number" string="发票" filter_domain="['|','|','|','|', ('number','ilike',self), ('origin','ilike',self), ('reference', 'ilike', self), ('partner_id', 'child_of', self), ('name','ilike',self)]"/>-->
-<!--                </xpath>-->
-
-<!--            </field>-->
-<!--        </record>-->
-
     </data>
 </odoo>

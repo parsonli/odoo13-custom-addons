@@ -17,8 +17,18 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_tree"/>
         <field name="arch" type="xml">
-            <field name="state" position="after">
-                <field name="delivery_status"/>
+            <field name="invoice_status" position="after">
+                <field name="delivery_status" optional="show"/>
+            </field>
+        </field>
+    </record>
+    <record id="oin_view_sale_order_tree_inherit" model="ir.ui.view">
+        <field name="name">oin.sale.order.tree.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree"/>
+        <field name="arch" type="xml">
+            <field name="invoice_status" position="after">
+                <field name="delivery_status" optional="show"/>
             </field>
         </field>
     </record>

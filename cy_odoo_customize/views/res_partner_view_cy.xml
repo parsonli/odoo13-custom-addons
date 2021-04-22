@@ -7,18 +7,16 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-
-<!--                <xpath expr="//page[@name='sales_purchases']//field[@name='customer']"-->
-<!--                       position="before">-->
-<!--                    &lt;!&ndash; Add your fields or attributes here &ndash;&gt;-->
-<!--                    <field name="able_credit_limit_change" invisible="1"/>-->
-<!--                    <field name="credit"-->
-<!--                           attrs="{'invisible':[('is_company','=',False)]}"/>-->
-<!--                    <field name="parent_credit" string="应收总计"-->
-<!--                           attrs="{'invisible':[('is_company','=',True)]}"/>-->
-<!--                    <field name="credit_limit"-->
-<!--                           attrs="{'readonly':[('able_credit_limit_change','=',False)]}"/>-->
-<!--                </xpath>-->
+                <xpath expr="//page[@name='sales_purchases']//field[@name='user_id']"
+                       position="before">
+                    <field name="able_credit_limit_change" invisible="1"/>
+                    <field name="credit"
+                           attrs="{'invisible':[('is_company','=',False)]}"/>
+                    <field name="parent_credit" string="应收总计"
+                           attrs="{'invisible':[('is_company','=',True)]}"/>
+                    <field name="credit_limit"
+                           attrs="{'readonly':[('able_credit_limit_change','=',False)]}"/>
+                </xpath>
                 <xpath expr="//field[@name='type']" position="before">
                     <field name="ref" string="客户编号" attrs="{'invisible': [('is_company','=', False)]}"/>
                 </xpath>

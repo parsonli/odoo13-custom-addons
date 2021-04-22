@@ -7,10 +7,11 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//sheet" position="before">
+                <xpath expr="/form/sheet" position="before">
                     <div class="alert alert-danger" role="alert" style="margin-bottom:0px;"
                          attrs="{'invisible':[('over_credit', '!=', True)]}">
-                        客户<field name="partner_id" readonly="True"/>
+                        客户
+                        <field name="partner_id" readonly="True"/>
                         已超信用额度，您可以 <b>保存</b> 销售单，但是 <b>无法确认</b> 销售单。
                     </div>
                 </xpath>
@@ -18,10 +19,10 @@
                 <xpath expr="//field[@name='payment_term_id']" position="after">
                     <field name="over_credit" string="已超信用额度" onchange="1" invisible="1"/>
                     <field name="company_id"/>
-                    <!-- 手动添加 warehouse_id -->
+                    <field name="warehouse_id"/>
                 </xpath>
                 <xpath expr="//field[@name='partner_shipping_id']" position="after">
-                    <field name="commitment_date" string="承诺交货日期"/>
+                    <field name="commitment_date" string="承诺交货日期" widget="date"/>
                 </xpath>
 
                 <xpath expr="//button[@name='action_confirm'][1]" position="attributes">
@@ -37,23 +38,51 @@
                         ('over_credit','!=',False)
                         ]}</attribute>
                 </xpath>
-
-                <xpath expr="//form/sheet/group/group/field[@name='partner_id']" position="attributes">
+                <xpath expr="//field[@name='validity_date']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="attributes">
                     <attribute name="options">{'no_create':True}</attribute>
                 </xpath>
-                <xpath expr="//form/sheet/group/group/field[@name='partner_invoice_id']" position="attributes">
+                <xpath expr="//field[@name='partner_invoice_id']" position="attributes">
                     <attribute name="options">{'no_create':True}</attribute>
                 </xpath>
-                <xpath expr="//form/sheet/group/group/field[@name='partner_shipping_id']" position="attributes">
+                <xpath expr="//field[@name='partner_shipping_id']" position="attributes">
                     <attribute name="options">{'no_create':True}</attribute>
                 </xpath>
-                <xpath expr="//field[@name='product_id']" position="attributes">
+                <xpath expr="//page[@name='order_lines']//field[@name='product_id']" position="attributes">
+                    <attribute name="options">{'no_create':True}</attribute>
+                </xpath>
+                <xpath expr="//page[@name='order_lines']//field[@name='product_uom']" position="attributes">
                     <attribute name="options">{'no_create':True}</attribute>
                 </xpath>
                 <xpath expr="//field[@name='order_line']/tree/control/create[2]" position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>
-                <xpath expr="//field[@name='analytic_tag_ids']" position="attributes">
+                <xpath expr="//page[@name='order_lines']/field/tree/field[@name='product_id']" position="attributes">
+                    <attribute name="options">{'no_create':True}</attribute>
+                </xpath>
+                <xpath expr="//page[@name='order_lines']/field/tree/field[@name='product_uom']" position="attributes">
+                    <attribute name="options">{'no_create':True}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/kanban/field[@name='product_id']" position="attributes">
+                    <attribute name="options">{'no_create':True}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/kanban/field[@name='product_uom']" position="attributes">
+                    <attribute name="options">{'no_create':True}</attribute>
+                </xpath>
+            </field>
+        </record>
+        <!-- 报价单/订单form界面修改 -->
+        <record id="sale_order_form_view_quote_cy" model="ir.ui.view">
+            <field name="name">sale.order.form.view.quote.cy</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_management.sale_order_form_quote"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='optional_products']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sale_order_template_id']" position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>
             </field>
@@ -65,19 +94,15 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_quotation_tree"/>
             <field name="arch" type="xml">
-<!--                <xpath expr="//field[@name='date_order']" position="attributes">-->
-<!--                    <attribute name="widget">date</attribute>-->
-<!--                </xpath>-->
-<!--                <xpath expr="//field[@name='commitment_date']" position="replace">-->
-<!--                    <field name="commitment_date" widget="date"/>-->
-<!--                </xpath>-->
+                <xpath expr="//field[@name='create_date']" position="attributes">
+                    <attribute name="widget">date</attribute>
+                </xpath>
+                <xpath expr="//field[@name='commitment_date']" position="attributes">
+                    <attribute name="widget">date</attribute>
+                </xpath>
                 <xpath expr="//field[@name='expected_date']" position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>
-                <xpath expr="//field[@name='partner_id']" position="before">
-                    <field name="company_id"/>
-                </xpath>
-
             </field>
         </record>
 
@@ -87,17 +112,14 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_tree"/>
             <field name="arch" type="xml">
-<!--                <xpath expr="//field[@name='confirmation_date']" position="attributes">-->
-<!--                    <attribute name="widget">date</attribute>-->
-<!--                </xpath>-->
-<!--                <xpath expr="//field[@name='commitment_date']" position="attributes">-->
-<!--                    <attribute name="widget">date</attribute>-->
-<!--                </xpath>-->
+                <xpath expr="//field[@name='date_order']" position="attributes">
+                    <attribute name="widget">date</attribute>
+                </xpath>
+                <xpath expr="//field[@name='commitment_date']" position="attributes">
+                    <attribute name="widget">date</attribute>
+                </xpath>
                 <xpath expr="//field[@name='expected_date']" position="attributes">
                     <attribute name="invisible">1</attribute>
-                </xpath>
-                <xpath expr="//field[@name='partner_id']" position="before">
-                    <field name="company_id"/>
                 </xpath>
 
             </field>
