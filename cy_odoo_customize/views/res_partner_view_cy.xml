@@ -15,12 +15,33 @@
                     <field name="parent_credit" string="应收总计"
                            attrs="{'invisible':[('is_company','=',True)]}"/>
                     <field name="credit_limit"
-                           attrs="{'readonly':[('able_credit_limit_change','=',False)]}"/>
+                           attrs="{'invisible':[('is_company','=',False)], 'readonly':[('able_credit_limit_change','=',False)]}"/>
                 </xpath>
                 <xpath expr="//field[@name='type']" position="before">
                     <field name="ref" string="客户编号" attrs="{'invisible': [('is_company','=', False)]}"/>
                 </xpath>
-
+            </field>
+        </record>
+        <record id="res_partner_tree_view_cy" model="ir.ui.view">
+            <field name="name">res.partner.tree.view.cy</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='display_name']" position="before">
+                    <field name="ref" string="客户编号"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="res_partner_search_cy" model="ir.ui.view">
+            <field name="name">res.partner.search.cy</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="filter_domain">
+                        ['|', '|', ('display_name', 'ilike', self), ('ref', 'ilike', self), ('email', 'ilike', self)]
+                    </attribute>
+                </xpath>
             </field>
         </record>
 

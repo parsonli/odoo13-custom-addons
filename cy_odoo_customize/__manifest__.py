@@ -7,7 +7,7 @@
     'category': 'Productivity',
     'website': 'https://www.chemi-young.com',
     'license': 'LGPL-3',
-    'sequence': 999,
+    'sequence': 2,
     'summary': """    
     
     """,
@@ -16,7 +16,7 @@
     """,
     'images': [''],
     'depends': [
-                'base', 'account', 'mrp', 'stock', 'sale',
+                'base', 'account', 'mrp', 'stock', 'sale', 'sale_stock',
     ],
     'data': [
             'views/res_partner_view_cy.xml',

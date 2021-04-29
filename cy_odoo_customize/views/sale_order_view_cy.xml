@@ -9,10 +9,9 @@
             <field name="arch" type="xml">
                 <xpath expr="/form/sheet" position="before">
                     <div class="alert alert-danger" role="alert" style="margin-bottom:0px;"
-                         attrs="{'invisible':[('over_credit', '!=', True)]}">
-                        客户
-                        <field name="partner_id" readonly="True"/>
-                        已超信用额度，您可以 <b>保存</b> 销售单，但是 <b>无法确认</b> 销售单。
+                         attrs="{'invisible':['|',('state', 'not in', ['draft','sent']),
+                         ('over_credit', '!=', True)]}">
+                        客户已超信用额度，您可以 <b>保存</b> 销售单，但是 <b>无法确认</b> 销售单。
                     </div>
                 </xpath>
 
@@ -22,7 +21,7 @@
                     <field name="warehouse_id"/>
                 </xpath>
                 <xpath expr="//field[@name='partner_shipping_id']" position="after">
-                    <field name="commitment_date" string="承诺交货日期" widget="date"/>
+                    <field name="commitment_date" string="承诺交货日期"/>
                 </xpath>
 
                 <xpath expr="//button[@name='action_confirm'][1]" position="attributes">

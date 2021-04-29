@@ -5,8 +5,7 @@ from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 
 
-class ResPartner(models.Model):
-    _name = 'res.partner'
+class Partner(models.Model):
     _inherit = 'res.partner'
 
     # 客户编号（ref）自动大写，sql数据库控制unique
@@ -68,16 +67,15 @@ class ResPartner(models.Model):
                 rec.parent_credit = 0
 
     parent_credit = fields.Monetary(compute=credit_from_parent, readonly='True')
-
+            
 
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     warehouse_id = fields.Many2one(check_company=False)
 
-    @api.onchange('company_id')
     def _onchange_company_id(self):
-        return self
+        return
 
     # 计算是否超过信用额度
     @api.depends('partner_invoice_id.credit', 'partner_invoice_id.parent_credit', 'partner_invoice_id.credit_limit')
@@ -88,14 +86,14 @@ class SaleOrder(models.Model):
                 record[('over_credit')] = record.partner_invoice_id.credit > record.partner_invoice_id.credit_limit
             else:
                 # 个人
-                record[('over_credit')] = record.partner_invoice_id.parent_credit > record.partner_invoice_id.credit_limit
+                record[('over_credit')] = record.partner_invoice_id.parent_credit > record.partner_invoice_id.parent_id.credit_limit
 
     # bool用来控制是否显示确认按钮
     over_credit = fields.Boolean(compute=is_over_credit, readonly='True')
 
-    def action_invoice_create(self):
-        for order in self:
-            if order.env.user.company_id.id != order.company_id.id:
-                raise UserError(_("请切换公司后再创建发票"))
-            res = super(SaleOrder, self).action_invoice_create()
-            return res
+    # def action_invoice_create(self):
+    #     for order in self:
+    #         if order.env.user.company_id.id != order.company_id.id:
+    #             raise UserError(_("请切换公司后再创建发票"))
+    #         res = super(SaleOrder, self).action_invoice_create()
+    #         return res
