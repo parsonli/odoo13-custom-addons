@@ -20,11 +20,11 @@
     ],
     'data': [
             'views/res_partner_view_cy.xml',
-            # 'views/stock_picking_cy.xml',
             'views/sale_order_view_cy.xml',
             'views/purchase_order_view_cy.xml',
             'views/account_invoice_view_cy.xml',
             'views/account_move_view_cy.xml',
+            'views/stock_picking_cy.xml',
             ],
     'qweb': [
 
